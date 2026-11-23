@@ -2,11 +2,10 @@
 
 ## Mission
 
-Many young Africans only meet politics through social media, headlines or public debates, and have few chances to see how laws
-are made or how African countries cooperate through regional organisations. My mission is to learn deeply about governance and
-regional integration and to help more young people understand the system from the inside.
-BaraLens explores how demographic, educational and governance-related characteristics relate to people's openness to African
-regional integration. It does **not** measure leadership potential or the effectiveness of civic education.
+Many young Africans only meet politics through social media and headlines, with little view of how African countries cooperate.
+My mission is to learn deeply about governance and regional integration and help young people understand the system from the inside.
+BaraLens predicts how open a person is to African regional integration (0–1) from demographic, education and governance-related survey answers.
+It does **not** measure leadership potential or the effectiveness of civic education.
 
 ## Dataset
 
