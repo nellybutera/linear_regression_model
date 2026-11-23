@@ -59,6 +59,17 @@ def load_model():
     return joblib.load(BASE_MODEL_PATH)
 
 
+def predict_one_row(row, bundle=None):
+    # Shared by the notebook (one test row) and by /predict, so both predict the exact same way.
+    # Loads the saved model when no bundle is passed in. row = one-row DataFrame or dict of the 10 features.
+    if bundle is None:
+        bundle = joblib.load(BASE_MODEL_PATH)
+    if isinstance(row, dict):
+        row = pd.DataFrame([row])
+    score = float(bundle["pipeline"].predict(row[FEATURES])[0])
+    return min(max(score, 0.0), 1.0)  # a linear model can go slightly outside 0-1, the index can't
+
+
 def load_base_split():
     # Same split as the notebook (test_size=0.2, random_state=42), so the test set is fixed
     # and old and new models are always compared on exactly the same rows
