@@ -21,7 +21,13 @@ afcfta_aware (categorical). After removing refused / don't-know answers, 35,988 
 
 ## Public API (Swagger UI)
 
-_Render URL will be added after deployment._
+**Swagger UI:** https://baralens-api.onrender.com/docs
+
+- `POST /predict` – send the 10 features as JSON, get back the predicted openness index (0–1)
+- `POST /retrain` – upload a CSV with the 10 feature columns plus `openness_index`; the model is retrained and used by `/predict` straight away
+
+Hosted on Render's free plan, so the first request after a quiet period can take up to ~1 minute while the server wakes up.
+A retrained model lives in memory and in `/tmp`; Render's free disk is not permanent, so after a restart the API goes back to the committed `best_model.pkl`.
 
 ## Demo video
 
