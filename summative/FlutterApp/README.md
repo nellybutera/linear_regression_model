@@ -1,17 +1,12 @@
-# baralens
+# BaraLens app
 
-A new Flutter project.
+Single-page Flutter app for BaraLens. You fill in the 10 survey answers (age, education, border ease, AU recognition, social media news, gender, area, country, employment, AfCFTA awareness), tap **Predict**, and it shows the predicted Regional Openness Index (0 to 1) from the BaraLens API.
 
-## Getting Started
+## Run it
+```bash
+flutter pub get
+flutter run
+```
+It uses the live API at https://baralens-api.onrender.com. The free server sleeps, so the first prediction can take up to about a minute.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+To use a local API instead: `flutter run --dart-define=API_URL=http://10.0.2.2:8000`
