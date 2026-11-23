@@ -1,12 +1,11 @@
 import os
 from typing import Literal
 
-import pandas as pd
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from retrain import FEATURES, load_model, retrain_lock, retrain_model, validate_training_csv
+from retrain import load_model, predict_one_row, retrain_lock, retrain_model, validate_training_csv
 
 app = FastAPI(
     title="BaraLens API",
@@ -14,9 +13,14 @@ app = FastAPI(
                 "Model trained on Afrobarometer Round 10 survey data.",
 )
 
-# Explicit list of origins, no "*". Browsers reject "*" together with credentials anyway.
-# Mobile apps don't send an Origin header, so the Flutter app on a phone is not blocked by this.
+# CORS decides which websites (browser origins) may call this API.
+# Allowed: the API's own Render URL (Swagger UI) and local web debug addresses (Flutter web / dashboards on localhost),
+# plus any extra origins set in the EXTRA_ORIGINS env variable, only GET/POST/OPTIONS and only the headers we need.
+# Restricted: every other website. No "*", because that would let any site call the API with users' credentials
+# (browsers reject "*" together with allow_credentials anyway).
+# The Flutter app on a phone is not a browser and sends no Origin header, so CORS does not block it.
 default_origins = [
+    "https://baralens-api.onrender.com",
     "http://localhost:3000",
     "http://localhost:8080",
     "http://localhost:5000",
@@ -83,9 +87,7 @@ def home():
 
 @app.post("/predict")
 def predict(data: SurveyInput):
-    row = pd.DataFrame([data.model_dump()])[FEATURES]
-    score = float(model_bundle["pipeline"].predict(row)[0])
-    score = min(max(score, 0.0), 1.0)  # a linear model can go slightly outside 0-1, the index can't
+    score = predict_one_row(data.model_dump(), model_bundle)
     return {
         "openness_index": round(score, 4),
         "interpretation": describe_score(score),
