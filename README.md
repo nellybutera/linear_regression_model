@@ -32,7 +32,7 @@ Hosted on Render's free plan, so the first request after a quiet period can take
 
 ## Demo video
 
-_Link will be added._
+https://youtu.be/pnACXqJ4qBc
 
 ## How to run
 
