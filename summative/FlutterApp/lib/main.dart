@@ -157,6 +157,15 @@ class _PredictionPageState extends State<PredictionPage> {
           )
           .timeout(const Duration(seconds: 90));
 
+      // Check the status first: while Render wakes up it can send back an HTML error page, not JSON
+      if (response.statusCode != 200 && response.statusCode != 422) {
+        setState(
+          () => errorText =
+              'Server error (${response.statusCode}). The server may be waking up, please try again.',
+        );
+        return;
+      }
+
       final data = jsonDecode(response.body);
       if (response.statusCode == 200) {
         final score = (data['openness_index'] as num).toDouble();
@@ -164,15 +173,10 @@ class _PredictionPageState extends State<PredictionPage> {
           () => resultText =
               'Regional Openness Index: ${score.toStringAsFixed(3)}\n${data['interpretation']}',
         );
-      } else if (response.statusCode == 422) {
-        setState(
-          () => errorText =
-              'The API rejected the input: ${readValidationError(data)}',
-        );
       } else {
         setState(
           () => errorText =
-              'Server error (${response.statusCode}). Please try again.',
+              'The API rejected the input: ${readValidationError(data)}',
         );
       }
     } on TimeoutException {
