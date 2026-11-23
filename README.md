@@ -17,7 +17,7 @@ regional integration. It does **not** measure leadership potential or the effect
 **Target:** Regional Openness Index (0–1), the average of 7 attitude items on migrants and refugees (Q73A–C), open trade and free
 movement (Q76A–B) and accepting immigrants/refugees as neighbours (Q88D, Q88F).
 **Predictors (10):** age, education, border_ease, au_recognition, social_media_news (numeric) and gender, area, country, employment,
-afcfta_aware (categorical). After removing refused / don't-know answers, 35,988 rows are used.
+afcfta_aware (categorical). After removing refused / don't-know answers there are 35,988 usable rows: 35,488 are used to build the models and 500 are kept aside as "new survey data" (`summative/API/retrain_sample.csv`) to demonstrate retraining.
 
 ## Public API (Swagger UI)
 
@@ -26,8 +26,10 @@ afcfta_aware (categorical). After removing refused / don't-know answers, 35,988 
 - `POST /predict` – send the 10 features as JSON, get back the predicted openness index (0–1)
 - `POST /retrain` – upload a CSV with the 10 feature columns plus `openness_index`; the model is retrained and used by `/predict` straight away
 
+Render settings: root directory `summative/API`, build `pip install -r requirements.txt`, start `uvicorn prediction:app --host 0.0.0.0 --port $PORT` (Python version from `summative/API/.python-version`).
+
 Hosted on Render's free plan, so the first request after a quiet period can take up to ~1 minute while the server wakes up.
-A retrained model lives in memory and in `/tmp`; Render's free disk is not permanent, so after a restart the API goes back to the committed `best_model.pkl`.
+`/retrain` trains on the original training rows plus the uploaded rows (duplicates removed) and scores the old and new model on the same fixed test set; the new model only replaces the old one if its test MSE is not more than 2% worse. A retrained model lives in memory and in `/tmp`; Render's free disk is not permanent, so after a restart the API goes back to the committed `best_model.pkl`.
 
 ## Demo video
 
