@@ -1,0 +1,501 @@
+age,education,border_ease,au_recognition,social_media_news,gender,area,country,employment,afcfta_aware,openness_index
+24.0,6.0,1.0,2.0,4.0,Man,Rural,Cote d'Ivoire,"Not working, looking",No,0.6666666666666666
+29.0,7.0,2.0,4.0,4.0,Woman,Urban,Sierra Leone,"Not working, looking",No,0.6428571428571429
+51.0,0.0,2.0,5.0,0.0,Man,Rural,Guinea,"Not working, not looking",No,0.38095238095238093
+24.0,6.0,2.0,5.0,3.0,Man,Urban,Zimbabwe,"Not working, looking",No,0.5238095238095238
+37.0,1.0,2.0,4.0,3.0,Woman,Urban,Guinea,Full time,No,0.5238095238095238
+19.0,5.0,4.0,4.0,4.0,Woman,Rural,Eswatini,"Not working, not looking",No,0.6666666666666666
+21.0,0.0,3.0,4.0,0.0,Man,Rural,Chad,"Not working, not looking",No,0.5
+27.0,2.0,3.0,5.0,2.0,Woman,Rural,Mozambique,"Not working, looking",No,0.5
+58.0,5.0,4.0,5.0,2.0,Woman,Urban,Madagascar,Part time,No,0.0
+22.0,4.0,2.0,4.0,0.0,Man,Rural,Congo-Brazzaville,"Not working, looking",No,0.5476190476190476
+30.0,9.0,2.0,2.0,4.0,Man,Urban,Mauritius,Full time,No,0.4444444444444444
+22.0,8.0,4.0,4.0,4.0,Man,Urban,Kenya,"Not working, looking",Yes,0.5357142857142857
+18.0,4.0,2.0,4.0,3.0,Man,Urban,Zambia,"Not working, not looking",No,0.19047619047619047
+68.0,5.0,2.0,1.0,4.0,Woman,Urban,Mali,"Not working, not looking",No,0.39285714285714285
+49.0,4.0,1.0,5.0,0.0,Man,Urban,Uganda,Full time,No,0.75
+51.0,1.0,2.0,2.0,0.0,Man,Rural,Guinea,"Not working, not looking",No,0.8928571428571429
+34.0,4.0,2.0,4.0,0.0,Woman,Rural,Togo,"Not working, looking",No,0.5238095238095238
+41.0,3.0,2.0,4.0,0.0,Woman,Rural,Sao Tome and Principe,"Not working, looking",Yes,0.4880952380952381
+22.0,4.0,3.0,4.0,2.0,Man,Rural,Namibia,"Not working, looking",No,0.6547619047619048
+34.0,5.0,3.0,4.0,0.0,Man,Peri-Urban,Botswana,"Not working, looking",No,0.35
+23.0,4.0,1.0,5.0,1.0,Man,Urban,Lesotho,Part time,No,0.4047619047619047
+25.0,4.0,4.0,5.0,0.0,Man,Rural,Malawi,"Not working, looking",Yes,0.7023809523809523
+52.0,0.0,1.0,4.0,0.0,Woman,Urban,Namibia,"Not working, not looking",No,0.47619047619047616
+25.0,5.0,2.0,5.0,0.0,Man,Rural,Kenya,Part time,No,0.4404761904761904
+22.0,4.0,2.0,4.0,0.0,Woman,Rural,Chad,"Not working, not looking",No,0.5952380952380951
+37.0,8.0,2.0,5.0,4.0,Woman,Urban,Comoros,"Not working, not looking",No,0.6071428571428571
+35.0,7.0,3.0,2.0,4.0,Man,Urban,Eswatini,Full time,No,0.6388888888888888
+22.0,3.0,2.0,2.0,4.0,Woman,Rural,Mauritania,Part time,No,0.4880952380952381
+28.0,8.0,2.0,5.0,2.0,Woman,Rural,Nigeria,Full time,No,0.5357142857142857
+60.0,4.0,1.0,3.0,0.0,Man,Urban,Mauritius,Full time,No,0.4523809523809524
+46.0,2.0,2.0,4.0,0.0,Woman,Rural,Uganda,Full time,No,0.6785714285714286
+31.0,2.0,1.0,4.0,3.0,Man,Rural,Lesotho,"Not working, looking",No,0.25
+32.0,6.0,2.0,2.0,4.0,Man,Urban,Nigeria,Full time,No,0.2619047619047619
+24.0,5.0,1.0,4.0,4.0,Man,Urban,Gambia,"Not working, not looking",No,0.35714285714285715
+22.0,5.0,1.0,5.0,0.0,Woman,Rural,Angola,"Not working, looking",No,0.6785714285714286
+39.0,3.0,3.0,4.0,3.0,Woman,Urban,Tanzania,"Not working, looking",No,0.0
+34.0,4.0,2.0,4.0,4.0,Woman,Urban,Tunisia,"Not working, not looking",Yes,0.08333333333333333
+63.0,2.0,4.0,5.0,2.0,Man,Urban,Kenya,Full time,No,0.2857142857142857
+30.0,8.0,2.0,2.0,4.0,Man,Urban,Sierra Leone,"Not working, looking",No,0.5714285714285714
+20.0,4.0,2.0,4.0,2.0,Woman,Urban,Cameroon,"Not working, not looking",No,0.5476190476190476
+20.0,2.0,1.0,3.0,0.0,Man,Urban,Togo,"Not working, looking",No,0.7023809523809523
+24.0,4.0,3.0,1.0,4.0,Man,Rural,Comoros,"Not working, looking",No,0.4642857142857143
+45.0,7.0,4.0,5.0,4.0,Man,Urban,Kenya,Part time,Yes,0.7619047619047619
+18.0,5.0,3.0,4.0,3.0,Man,Urban,Guinea-Bissau,"Not working, looking",No,0.8214285714285714
+48.0,2.0,3.0,4.0,0.0,Man,Rural,Uganda,"Not working, looking",No,0.5238095238095238
+36.0,4.0,2.0,5.0,4.0,Man,Rural,Comoros,Part time,No,0.5357142857142857
+22.0,4.0,1.0,5.0,4.0,Woman,Urban,Gambia,"Not working, not looking",No,0.4880952380952381
+28.0,5.0,2.0,2.0,4.0,Woman,Urban,Kenya,"Not working, looking",Yes,0.3333333333333333
+29.0,5.0,3.0,2.0,2.0,Man,Urban,Kenya,Full time,Yes,0.35714285714285715
+32.0,5.0,2.0,4.0,4.0,Woman,Urban,Cameroon,"Not working, not looking",No,0.4523809523809524
+38.0,1.0,1.0,4.0,0.0,Man,Rural,Guinea,"Not working, not looking",No,0.5595238095238095
+64.0,3.0,1.0,5.0,0.0,Man,Rural,Tanzania,"Not working, not looking",No,0.4404761904761904
+44.0,5.0,3.0,4.0,2.0,Man,Rural,Namibia,"Not working, looking",Yes,0.41666666666666663
+22.0,4.0,1.0,4.0,0.0,Man,Urban,Sierra Leone,"Not working, not looking",No,0.5119047619047619
+40.0,4.0,3.0,4.0,3.0,Man,Urban,South Africa,Part time,No,0.07142857142857142
+63.0,0.0,1.0,2.0,0.0,Woman,Rural,Guinea,"Not working, not looking",No,0.4404761904761904
+32.0,4.0,2.0,5.0,4.0,Man,Rural,Lesotho,"Not working, looking",No,0.4523809523809524
+26.0,0.0,2.0,3.0,0.0,Man,Rural,Mozambique,"Not working, not looking",No,0.5119047619047619
+24.0,0.0,2.0,4.0,2.0,Woman,Rural,Chad,"Not working, not looking",No,0.5595238095238095
+32.0,5.0,2.0,4.0,0.0,Woman,Rural,Uganda,"Not working, not looking",No,0.17857142857142858
+46.0,4.0,2.0,5.0,2.0,Man,Rural,Zimbabwe,Part time,No,0.5833333333333333
+30.0,4.0,1.0,4.0,0.0,Man,Rural,Chad,"Not working, looking",No,0.4880952380952381
+35.0,8.0,2.0,4.0,4.0,Man,Rural,Comoros,"Not working, looking",No,0.47619047619047616
+45.0,0.0,3.0,4.0,0.0,Woman,Rural,Mauritania,"Not working, not looking",No,0.47619047619047616
+83.0,2.0,1.0,4.0,0.0,Woman,Urban,Seychelles,Full time,No,0.6666666666666666
+18.0,4.0,1.0,1.0,4.0,Man,Urban,Gabon,"Not working, looking",No,0.619047619047619
+42.0,3.0,2.0,3.0,3.0,Man,Urban,Nigeria,"Not working, not looking",No,0.6547619047619048
+30.0,6.0,4.0,3.0,0.0,Woman,Rural,Chad,"Not working, looking",No,0.7023809523809523
+35.0,4.0,3.0,5.0,3.0,Man,Rural,Eswatini,"Not working, looking",No,0.5238095238095238
+52.0,9.0,2.0,4.0,4.0,Man,Urban,Comoros,"Not working, not looking",Yes,0.5714285714285714
+35.0,1.0,2.0,5.0,4.0,Man,Urban,Gambia,"Not working, not looking",Yes,0.2857142857142857
+42.0,6.0,3.0,4.0,4.0,Woman,Urban,Zambia,Full time,No,0.2619047619047619
+59.0,5.0,2.0,4.0,0.0,Man,Rural,Uganda,Full time,Yes,0.29761904761904756
+26.0,8.0,2.0,3.0,4.0,Man,Rural,Ghana,"Not working, not looking",No,0.5952380952380951
+66.0,2.0,1.0,5.0,0.0,Man,Rural,South Africa,"Not working, not looking",No,0.20238095238095236
+30.0,4.0,2.0,5.0,0.0,Woman,Urban,Guinea,"Not working, not looking",No,0.6428571428571429
+22.0,4.0,4.0,2.0,4.0,Woman,Urban,Mali,Part time,No,0.2261904761904762
+29.0,4.0,2.0,2.0,4.0,Man,Urban,Sao Tome and Principe,"Not working, looking",No,0.5952380952380951
+22.0,4.0,1.0,4.0,0.0,Woman,Rural,Madagascar,Part time,No,0.2857142857142857
+19.0,5.0,4.0,3.0,4.0,Woman,Urban,South Africa,"Not working, looking",No,0.20238095238095236
+55.0,0.0,2.0,4.0,0.0,Woman,Rural,Cameroon,"Not working, not looking",No,0.9285714285714286
+36.0,4.0,3.0,4.0,0.0,Man,Rural,Madagascar,"Not working, not looking",No,0.16666666666666666
+32.0,5.0,1.0,4.0,0.0,Man,Rural,Togo,Full time,No,0.6071428571428571
+35.0,4.0,2.0,4.0,0.0,Woman,Rural,Kenya,"Not working, not looking",No,0.738095238095238
+25.0,4.0,2.0,4.0,0.0,Woman,Rural,Cote d'Ivoire,"Not working, not looking",No,0.7023809523809523
+39.0,2.0,3.0,4.0,3.0,Woman,Rural,Eswatini,"Not working, looking",No,0.7023809523809523
+78.0,2.0,3.0,4.0,0.0,Man,Urban,Tunisia,"Not working, not looking",No,0.34523809523809523
+29.0,2.0,3.0,4.0,3.0,Man,Rural,Tanzania,"Not working, looking",No,0.7261904761904763
+27.0,4.0,2.0,1.0,2.0,Woman,Urban,Uganda,"Not working, looking",Yes,0.4880952380952381
+25.0,7.0,1.0,5.0,3.0,Woman,Urban,Cote d'Ivoire,"Not working, not looking",No,0.6666666666666666
+19.0,4.0,2.0,2.0,0.0,Woman,Peri-Urban,Botswana,"Not working, looking",No,0.6666666666666666
+36.0,5.0,4.0,1.0,4.0,Man,Urban,South Africa,"Not working, looking",Yes,0.42857142857142855
+29.0,3.0,1.0,4.0,3.0,Man,Urban,Liberia,"Not working, looking",No,0.5833333333333333
+36.0,6.0,2.0,1.0,3.0,Man,Rural,Zimbabwe,Part time,No,0.6309523809523808
+35.0,3.0,2.0,2.0,4.0,Woman,Rural,Senegal,Full time,No,0.38095238095238093
+42.0,3.0,3.0,4.0,2.0,Woman,Urban,Cabo Verde,Full time,No,0.6666666666666666
+53.0,2.0,2.0,4.0,0.0,Woman,Rural,Zambia,"Not working, not looking",No,0.4523809523809524
+50.0,5.0,3.0,4.0,0.0,Man,Rural,Congo-Brazzaville,"Not working, not looking",No,0.6547619047619048
+40.0,5.0,3.0,5.0,4.0,Woman,Rural,South Africa,Part time,No,0.2261904761904762
+50.0,5.0,2.0,4.0,0.0,Woman,Rural,Botswana,"Not working, looking",No,0.3333333333333333
+29.0,0.0,1.0,4.0,0.0,Woman,Rural,Senegal,"Not working, looking",No,0.6904761904761906
+22.0,2.0,2.0,3.0,0.0,Woman,Rural,Guinea-Bissau,"Not working, not looking",No,0.369047619047619
+65.0,3.0,1.0,4.0,0.0,Man,Rural,Nigeria,Full time,No,0.42857142857142855
+38.0,4.0,1.0,5.0,3.0,Woman,Rural,Lesotho,Full time,Yes,0.41666666666666663
+47.0,0.0,3.0,4.0,2.0,Woman,Rural,Guinea-Bissau,"Not working, looking",No,0.7261904761904763
+45.0,3.0,3.0,4.0,0.0,Man,Urban,Guinea,"Not working, not looking",No,0.6071428571428571
+40.0,0.0,1.0,5.0,0.0,Man,Rural,Guinea,"Not working, not looking",Yes,0.4523809523809524
+24.0,2.0,1.0,4.0,0.0,Woman,Rural,Malawi,"Not working, not looking",No,0.47619047619047616
+30.0,0.0,1.0,4.0,0.0,Woman,Rural,Togo,"Not working, not looking",No,0.369047619047619
+23.0,5.0,2.0,4.0,4.0,Woman,Rural,Uganda,Full time,No,0.2738095238095238
+40.0,4.0,1.0,4.0,0.0,Woman,Rural,Uganda,Full time,Yes,0.5952380952380951
+19.0,1.0,2.0,3.0,0.0,Man,Rural,Ghana,"Not working, looking",No,0.5595238095238095
+63.0,7.0,2.0,4.0,2.0,Man,Rural,Namibia,"Not working, not looking",Yes,0.23809523809523808
+35.0,0.0,2.0,4.0,3.0,Man,Urban,Sierra Leone,"Not working, not looking",No,0.39285714285714285
+31.0,6.0,4.0,4.0,3.0,Woman,Urban,Seychelles,Full time,No,0.13095238095238093
+25.0,8.0,1.0,4.0,4.0,Man,Urban,Sao Tome and Principe,Full time,Yes,0.5952380952380951
+20.0,5.0,2.0,4.0,3.0,Man,Rural,Zimbabwe,"Not working, looking",Yes,0.7261904761904763
+29.0,3.0,2.0,4.0,1.0,Woman,Urban,Sierra Leone,"Not working, not looking",No,0.4642857142857143
+30.0,3.0,2.0,2.0,3.0,Man,Urban,Angola,Part time,No,0.5833333333333333
+33.0,5.0,1.0,2.0,0.0,Man,Urban,Kenya,Part time,Yes,0.5238095238095238
+33.0,5.0,3.0,2.0,4.0,Man,Peri-Urban,Botswana,"Not working, looking",Yes,0.4880952380952381
+23.0,2.0,4.0,5.0,0.0,Woman,Rural,Mozambique,"Not working, not looking",No,0.3095238095238095
+59.0,5.0,2.0,2.0,0.0,Woman,Rural,Gabon,Part time,No,0.8214285714285714
+33.0,7.0,2.0,1.0,4.0,Man,Urban,Togo,"Not working, looking",No,0.7023809523809523
+55.0,2.0,2.0,4.0,1.0,Man,Rural,Benin,"Not working, not looking",No,0.8214285714285714
+53.0,4.0,3.0,2.0,4.0,Man,Urban,Comoros,"Not working, not looking",No,0.5714285714285714
+37.0,5.0,1.0,2.0,4.0,Man,Urban,South Africa,"Not working, looking",No,0.5694444444444444
+33.0,4.0,4.0,1.0,0.0,Man,Rural,South Africa,"Not working, looking",No,0.09523809523809523
+28.0,4.0,3.0,4.0,4.0,Woman,Urban,Sierra Leone,Part time,No,0.6904761904761905
+45.0,0.0,1.0,4.0,0.0,Woman,Urban,Mali,"Not working, not looking",No,0.8571428571428571
+20.0,5.0,2.0,4.0,4.0,Man,Rural,Namibia,"Not working, not looking",No,0.34523809523809523
+20.0,4.0,3.0,4.0,4.0,Man,Rural,Nigeria,"Not working, not looking",No,0.8452380952380951
+28.0,3.0,2.0,2.0,4.0,Woman,Rural,Mauritania,"Not working, looking",No,0.35714285714285715
+22.0,4.0,3.0,5.0,3.0,Woman,Rural,Cameroon,"Not working, looking",No,0.4880952380952381
+19.0,4.0,1.0,4.0,1.0,Man,Urban,Namibia,"Not working, looking",No,0.4523809523809524
+28.0,5.0,1.0,4.0,0.0,Man,Rural,Liberia,"Not working, looking",No,0.7857142857142857
+47.0,2.0,1.0,5.0,0.0,Man,Rural,Malawi,"Not working, looking",No,0.7619047619047619
+32.0,1.0,1.0,2.0,0.0,Woman,Rural,Guinea-Bissau,"Not working, looking",No,0.611111111111111
+81.0,3.0,3.0,4.0,0.0,Woman,Urban,South Africa,"Not working, not looking",No,0.3095238095238095
+19.0,4.0,1.0,1.0,4.0,Man,Urban,Comoros,"Not working, not looking",No,0.25
+20.0,0.0,2.0,1.0,0.0,Woman,Urban,Nigeria,"Not working, not looking",No,0.7023809523809523
+41.0,2.0,1.0,5.0,3.0,Man,Urban,Senegal,"Not working, looking",No,0.4642857142857143
+20.0,4.0,4.0,2.0,4.0,Man,Urban,Gabon,"Not working, looking",No,0.29761904761904756
+36.0,8.0,2.0,4.0,4.0,Man,Urban,Cote d'Ivoire,Full time,No,0.7738095238095237
+24.0,1.0,3.0,2.0,2.0,Man,Rural,Guinea,"Not working, looking",No,0.2857142857142857
+34.0,2.0,2.0,2.0,2.0,Woman,Rural,Uganda,"Not working, looking",Yes,0.6309523809523808
+52.0,3.0,1.0,4.0,0.0,Man,Urban,Nigeria,Part time,Yes,0.39285714285714285
+21.0,5.0,2.0,1.0,0.0,Man,Rural,Tanzania,Full time,No,0.6071428571428571
+19.0,4.0,3.0,4.0,4.0,Man,Urban,Senegal,"Not working, looking",No,0.42857142857142855
+42.0,2.0,2.0,2.0,4.0,Man,Rural,Togo,"Not working, not looking",No,0.5119047619047619
+28.0,3.0,2.0,4.0,0.0,Woman,Urban,Nigeria,Full time,No,0.42857142857142855
+70.0,0.0,1.0,5.0,0.0,Woman,Rural,Mali,"Not working, not looking",No,0.42857142857142855
+34.0,6.0,3.0,4.0,4.0,Woman,Rural,South Africa,"Not working, looking",No,0.4880952380952381
+18.0,4.0,3.0,2.0,3.0,Woman,Urban,Sao Tome and Principe,"Not working, looking",No,0.4047619047619047
+40.0,3.0,1.0,5.0,0.0,Woman,Rural,Tanzania,Part time,No,0.14285714285714285
+23.0,6.0,2.0,5.0,4.0,Woman,Urban,Nigeria,Part time,No,0.7619047619047619
+55.0,2.0,2.0,4.0,0.0,Man,Urban,Cabo Verde,"Not working, looking",No,0.6309523809523808
+25.0,7.0,3.0,1.0,4.0,Woman,Urban,Lesotho,"Not working, not looking",No,0.6904761904761906
+36.0,6.0,3.0,2.0,4.0,Woman,Urban,Ghana,Full time,No,0.47222222222222215
+22.0,2.0,2.0,2.0,0.0,Woman,Urban,Mauritania,"Not working, not looking",No,0.5357142857142857
+30.0,4.0,1.0,4.0,0.0,Man,Rural,Malawi,"Not working, looking",No,0.6785714285714286
+48.0,8.0,3.0,4.0,4.0,Man,Urban,Seychelles,Full time,No,0.6428571428571429
+32.0,3.0,3.0,4.0,0.0,Man,Rural,Tanzania,Full time,No,0.41666666666666663
+20.0,2.0,3.0,5.0,0.0,Woman,Rural,Mozambique,"Not working, not looking",No,0.5
+70.0,0.0,2.0,4.0,0.0,Man,Rural,Cote d'Ivoire,"Not working, not looking",No,0.7023809523809523
+51.0,5.0,4.0,4.0,4.0,Woman,Rural,Mauritius,Full time,No,0.2738095238095238
+18.0,4.0,1.0,4.0,0.0,Man,Rural,Eswatini,"Not working, not looking",No,0.5119047619047619
+30.0,2.0,3.0,4.0,0.0,Man,Rural,Malawi,"Not working, looking",No,0.8571428571428571
+27.0,2.0,2.0,5.0,0.0,Woman,Urban,Uganda,"Not working, looking",No,0.5833333333333333
+71.0,5.0,1.0,3.0,0.0,Man,Urban,Zimbabwe,"Not working, looking",No,0.738095238095238
+84.0,3.0,2.0,4.0,0.0,Woman,Peri-Urban,Lesotho,"Not working, not looking",No,0.23809523809523808
+47.0,3.0,1.0,5.0,4.0,Woman,Rural,Uganda,"Not working, looking",Yes,0.5833333333333334
+48.0,5.0,2.0,5.0,4.0,Man,Rural,Eswatini,Full time,No,0.47619047619047616
+40.0,3.0,2.0,4.0,0.0,Man,Rural,Benin,"Not working, not looking",No,0.761904761904762
+52.0,0.0,1.0,4.0,4.0,Woman,Urban,Ghana,Full time,No,0.7857142857142857
+18.0,4.0,3.0,2.0,4.0,Man,Rural,Eswatini,Part time,Yes,0.5595238095238095
+82.0,4.0,2.0,4.0,0.0,Man,Rural,Zambia,"Not working, not looking",No,0.5238095238095238
+61.0,4.0,2.0,4.0,0.0,Woman,Urban,Seychelles,Full time,Yes,0.7023809523809523
+19.0,4.0,4.0,5.0,4.0,Woman,Urban,Tunisia,"Not working, not looking",No,0.25
+43.0,2.0,3.0,5.0,0.0,Man,Rural,Madagascar,"Not working, not looking",No,0.20238095238095236
+64.0,4.0,2.0,5.0,0.0,Man,Urban,Madagascar,Part time,No,0.5595238095238095
+34.0,8.0,3.0,4.0,4.0,Woman,Urban,Namibia,Full time,Yes,0.7261904761904762
+22.0,3.0,2.0,1.0,4.0,Man,Urban,Guinea-Bissau,Part time,No,0.6904761904761905
+31.0,4.0,1.0,4.0,0.0,Woman,Urban,Lesotho,Full time,No,0.41666666666666663
+23.0,8.0,1.0,4.0,4.0,Man,Rural,Chad,"Not working, not looking",No,0.2857142857142857
+40.0,0.0,2.0,4.0,0.0,Man,Rural,Tanzania,Full time,No,0.736111111111111
+24.0,5.0,3.0,4.0,4.0,Man,Rural,Cabo Verde,"Not working, not looking",No,0.75
+30.0,4.0,3.0,4.0,3.0,Man,Rural,Sao Tome and Principe,Full time,No,0.42857142857142855
+52.0,4.0,1.0,5.0,0.0,Man,Urban,Mauritania,"Not working, not looking",No,0.4305555555555555
+34.0,2.0,1.0,4.0,0.0,Man,Rural,Cote d'Ivoire,"Not working, not looking",No,0.6309523809523808
+31.0,3.0,2.0,4.0,3.0,Woman,Urban,Sao Tome and Principe,Full time,Yes,0.6428571428571429
+25.0,4.0,2.0,4.0,0.0,Woman,Rural,Liberia,"Not working, looking",No,0.5595238095238095
+32.0,4.0,1.0,4.0,3.0,Man,Rural,Tanzania,Full time,No,0.7857142857142857
+30.0,2.0,2.0,4.0,0.0,Man,Rural,Madagascar,"Not working, looking",No,0.5833333333333334
+42.0,5.0,2.0,4.0,3.0,Man,Rural,Morocco,Part time,No,0.47619047619047616
+50.0,3.0,4.0,4.0,0.0,Man,Peri-Urban,Malawi,"Not working, looking",No,0.619047619047619
+28.0,5.0,3.0,2.0,4.0,Woman,Rural,Kenya,Full time,No,0.5595238095238095
+74.0,7.0,3.0,4.0,4.0,Man,Urban,Sierra Leone,"Not working, not looking",No,0.5119047619047619
+56.0,4.0,1.0,5.0,4.0,Woman,Urban,Zimbabwe,Part time,Yes,0.75
+41.0,5.0,1.0,3.0,0.0,Woman,Urban,Nigeria,Full time,No,0.4583333333333333
+70.0,3.0,3.0,5.0,2.0,Man,Urban,Zimbabwe,"Not working, not looking",Yes,0.7142857142857143
+46.0,8.0,2.0,4.0,3.0,Woman,Urban,Tunisia,Part time,No,0.3333333333333333
+35.0,4.0,2.0,2.0,0.0,Woman,Urban,Congo-Brazzaville,"Not working, looking",No,0.7023809523809523
+59.0,1.0,3.0,2.0,3.0,Woman,Urban,Guinea-Bissau,"Not working, not looking",No,0.6944444444444443
+52.0,4.0,2.0,5.0,4.0,Woman,Urban,Gambia,"Not working, looking",No,0.7738095238095237
+44.0,3.0,2.0,4.0,4.0,Man,Urban,Sao Tome and Principe,"Not working, looking",No,0.5714285714285714
+43.0,5.0,4.0,4.0,4.0,Woman,Urban,South Africa,"Not working, looking",No,0.3095238095238095
+34.0,3.0,2.0,4.0,3.0,Man,Rural,Zambia,"Not working, not looking",No,0.34523809523809523
+42.0,0.0,1.0,1.0,0.0,Man,Urban,Ghana,Full time,No,0.17857142857142858
+35.0,0.0,2.0,2.0,0.0,Woman,Urban,Benin,"Not working, not looking",No,0.7261904761904762
+52.0,0.0,2.0,4.0,0.0,Woman,Rural,Chad,"Not working, not looking",No,0.4404761904761904
+38.0,1.0,2.0,2.0,0.0,Man,Rural,Mauritania,"Not working, not looking",No,0.5833333333333333
+44.0,5.0,1.0,3.0,0.0,Man,Urban,Congo-Brazzaville,"Not working, not looking",No,0.7857142857142857
+50.0,2.0,1.0,4.0,4.0,Woman,Urban,Tunisia,"Not working, looking",No,0.14285714285714285
+27.0,5.0,2.0,4.0,4.0,Man,Urban,Kenya,Part time,No,0.9642857142857143
+60.0,3.0,1.0,5.0,0.0,Woman,Rural,Nigeria,"Not working, looking",No,0.8214285714285714
+60.0,2.0,2.0,4.0,4.0,Man,Rural,Uganda,Full time,No,0.5119047619047619
+25.0,3.0,2.0,5.0,0.0,Man,Rural,Malawi,"Not working, looking",No,0.6190476190476192
+51.0,5.0,1.0,5.0,4.0,Woman,Urban,Angola,Full time,No,0.5595238095238095
+38.0,2.0,1.0,5.0,0.0,Man,Rural,Tanzania,Full time,No,0.5595238095238095
+46.0,3.0,2.0,5.0,4.0,Man,Urban,Tanzania,Full time,No,0.6547619047619048
+49.0,4.0,3.0,4.0,4.0,Man,Urban,Namibia,"Not working, not looking",No,0.6309523809523808
+72.0,0.0,2.0,4.0,0.0,Man,Rural,Kenya,"Not working, looking",No,0.19047619047619047
+28.0,5.0,2.0,4.0,3.0,Man,Urban,Sao Tome and Principe,Full time,No,0.5714285714285714
+27.0,4.0,4.0,5.0,4.0,Man,Urban,Comoros,"Not working, looking",Yes,0.4047619047619047
+63.0,2.0,1.0,5.0,0.0,Man,Rural,Lesotho,"Not working, not looking",No,0.619047619047619
+25.0,2.0,3.0,2.0,0.0,Woman,Urban,Togo,"Not working, not looking",No,0.9285714285714286
+24.0,4.0,3.0,4.0,0.0,Woman,Rural,Kenya,Full time,Yes,0.4523809523809524
+35.0,4.0,1.0,4.0,4.0,Woman,Urban,Gambia,"Not working, not looking",No,0.4880952380952381
+23.0,4.0,4.0,1.0,2.0,Woman,Urban,Benin,"Not working, not looking",No,0.5238095238095238
+21.0,5.0,1.0,4.0,0.0,Woman,Rural,Ghana,"Not working, looking",No,0.41666666666666663
+18.0,2.0,2.0,3.0,0.0,Woman,Rural,Malawi,"Not working, not looking",No,0.4880952380952381
+40.0,4.0,1.0,4.0,0.0,Woman,Urban,Mali,"Not working, not looking",No,0.7142857142857143
+30.0,4.0,3.0,4.0,3.0,Woman,Rural,Nigeria,"Not working, not looking",No,0.5833333333333333
+39.0,3.0,2.0,4.0,4.0,Man,Urban,Guinea-Bissau,"Not working, not looking",No,0.4583333333333333
+55.0,0.0,1.0,1.0,4.0,Woman,Urban,Gambia,"Not working, looking",No,0.5238095238095238
+31.0,2.0,2.0,4.0,0.0,Man,Rural,Uganda,Part time,Yes,0.7023809523809523
+23.0,5.0,1.0,2.0,4.0,Man,Urban,Angola,"Not working, looking",No,0.16666666666666666
+51.0,6.0,2.0,2.0,4.0,Woman,Urban,Ghana,Full time,Yes,0.7023809523809523
+60.0,8.0,2.0,4.0,4.0,Man,Urban,Cabo Verde,"Not working, not looking",Yes,0.7023809523809523
+42.0,2.0,3.0,4.0,0.0,Man,Urban,Uganda,"Not working, looking",No,0.6071428571428571
+44.0,1.0,3.0,4.0,0.0,Woman,Rural,Mozambique,"Not working, looking",No,0.6309523809523808
+38.0,8.0,1.0,4.0,1.0,Man,Rural,Chad,"Not working, looking",No,0.6309523809523808
+36.0,5.0,3.0,4.0,3.0,Woman,Urban,South Africa,"Not working, looking",No,0.4880952380952381
+22.0,4.0,2.0,4.0,0.0,Man,Rural,Madagascar,"Not working, looking",No,0.08333333333333333
+35.0,5.0,3.0,3.0,4.0,Man,Urban,South Africa,"Not working, looking",Yes,0.2619047619047619
+25.0,3.0,3.0,2.0,3.0,Man,Rural,Mauritania,"Not working, looking",No,0.2619047619047619
+34.0,5.0,1.0,4.0,4.0,Man,Urban,Angola,"Not working, looking",Yes,0.4523809523809524
+29.0,1.0,2.0,4.0,2.0,Man,Rural,Mauritania,"Not working, looking",No,0.2738095238095238
+62.0,2.0,2.0,4.0,0.0,Man,Urban,Morocco,Full time,No,0.6547619047619048
+21.0,7.0,1.0,2.0,3.0,Woman,Urban,Zimbabwe,"Not working, not looking",No,0.6309523809523808
+18.0,4.0,2.0,4.0,4.0,Woman,Urban,Morocco,"Not working, not looking",No,0.4861111111111111
+39.0,5.0,4.0,4.0,2.0,Woman,Rural,Eswatini,"Not working, looking",No,0.5238095238095238
+39.0,6.0,1.0,4.0,4.0,Man,Urban,Kenya,Full time,No,0.5238095238095238
+52.0,5.0,1.0,2.0,4.0,Man,Urban,Benin,Full time,Yes,0.9642857142857143
+22.0,2.0,1.0,4.0,0.0,Woman,Rural,Zambia,"Not working, looking",No,0.0
+26.0,0.0,2.0,4.0,0.0,Woman,Rural,Cameroon,"Not working, not looking",No,0.9285714285714286
+21.0,3.0,2.0,1.0,4.0,Woman,Urban,Guinea-Bissau,Part time,No,0.6388888888888888
+45.0,3.0,2.0,4.0,4.0,Woman,Rural,Eswatini,Full time,No,0.7023809523809523
+28.0,7.0,1.0,5.0,4.0,Man,Rural,Comoros,Full time,No,0.7619047619047619
+43.0,2.0,4.0,3.0,0.0,Man,Rural,Cote d'Ivoire,"Not working, looking",No,0.38095238095238093
+78.0,5.0,1.0,4.0,3.0,Woman,Rural,Eswatini,"Not working, not looking",No,0.6547619047619048
+52.0,3.0,2.0,4.0,0.0,Man,Rural,Zambia,"Not working, looking",Yes,0.5119047619047619
+38.0,5.0,2.0,4.0,0.0,Woman,Rural,Kenya,"Not working, not looking",No,0.6547619047619048
+26.0,8.0,1.0,5.0,4.0,Man,Urban,Kenya,Full time,Yes,0.7976190476190477
+27.0,4.0,3.0,4.0,4.0,Man,Urban,Congo-Brazzaville,"Not working, looking",Yes,0.5595238095238095
+36.0,7.0,2.0,4.0,4.0,Man,Urban,Chad,Full time,No,0.7023809523809523
+30.0,4.0,2.0,4.0,4.0,Man,Rural,Cameroon,"Not working, not looking",No,0.738095238095238
+32.0,6.0,3.0,1.0,4.0,Woman,Urban,Lesotho,"Not working, not looking",No,0.2857142857142857
+28.0,4.0,2.0,4.0,4.0,Woman,Rural,Cameroon,Full time,No,0.738095238095238
+38.0,5.0,2.0,2.0,3.0,Man,Urban,Ghana,Full time,No,0.41666666666666663
+45.0,0.0,1.0,4.0,0.0,Woman,Rural,Guinea,"Not working, not looking",No,0.738095238095238
+44.0,5.0,2.0,4.0,0.0,Man,Urban,Ghana,Full time,No,0.0
+35.0,4.0,3.0,4.0,4.0,Woman,Rural,Eswatini,Part time,No,0.38095238095238093
+56.0,8.0,1.0,1.0,3.0,Man,Urban,Angola,Full time,Yes,0.4523809523809524
+44.0,2.0,2.0,4.0,0.0,Woman,Rural,Madagascar,"Not working, not looking",No,0.4880952380952381
+51.0,1.0,2.0,4.0,3.0,Woman,Urban,Senegal,"Not working, not looking",No,0.5833333333333333
+40.0,4.0,3.0,2.0,2.0,Man,Urban,Sao Tome and Principe,Part time,No,0.4642857142857143
+20.0,7.0,1.0,3.0,4.0,Woman,Rural,Comoros,"Not working, looking",Yes,0.4642857142857143
+23.0,1.0,3.0,4.0,1.0,Woman,Urban,Gambia,"Not working, not looking",No,0.23809523809523808
+30.0,3.0,2.0,1.0,4.0,Man,Urban,Kenya,Full time,No,0.42857142857142855
+26.0,4.0,2.0,2.0,4.0,Woman,Rural,Cote d'Ivoire,Part time,No,0.5714285714285714
+30.0,2.0,3.0,4.0,2.0,Woman,Rural,Togo,"Not working, not looking",No,0.5119047619047619
+53.0,3.0,2.0,4.0,2.0,Man,Peri-Urban,Botswana,"Not working, looking",No,0.47619047619047616
+35.0,4.0,2.0,4.0,3.0,Man,Rural,Mali,"Not working, looking",Yes,0.9166666666666666
+22.0,7.0,2.0,4.0,3.0,Man,Urban,Sao Tome and Principe,"Not working, looking",No,0.7619047619047619
+22.0,4.0,2.0,4.0,2.0,Man,Rural,Chad,"Not working, looking",No,0.5952380952380951
+60.0,0.0,1.0,4.0,0.0,Woman,Rural,Madagascar,"Not working, not looking",No,0.5357142857142857
+34.0,4.0,1.0,1.0,2.0,Woman,Peri-Urban,Botswana,"Not working, looking",No,0.17857142857142858
+38.0,0.0,2.0,4.0,1.0,Man,Rural,Guinea-Bissau,"Not working, looking",No,0.5238095238095238
+30.0,5.0,1.0,4.0,4.0,Woman,Rural,Cote d'Ivoire,Part time,No,0.47619047619047616
+40.0,0.0,3.0,4.0,0.0,Woman,Rural,Mali,"Not working, looking",No,0.13095238095238096
+26.0,2.0,4.0,4.0,4.0,Man,Rural,Cabo Verde,Part time,No,0.6785714285714286
+35.0,2.0,2.0,4.0,1.0,Woman,Rural,Nigeria,"Not working, looking",No,0.7023809523809523
+52.0,3.0,4.0,4.0,0.0,Man,Rural,Uganda,Full time,No,0.6309523809523808
+36.0,4.0,1.0,5.0,4.0,Man,Rural,Comoros,"Not working, looking",No,0.38095238095238093
+41.0,2.0,1.0,4.0,3.0,Woman,Urban,Cabo Verde,"Not working, not looking",No,0.3611111111111111
+34.0,4.0,2.0,2.0,0.0,Woman,Rural,Zambia,"Not working, not looking",No,0.34523809523809523
+26.0,3.0,3.0,2.0,3.0,Woman,Urban,Sierra Leone,"Not working, looking",No,0.42857142857142855
+32.0,3.0,2.0,4.0,3.0,Woman,Urban,Togo,"Not working, not looking",No,0.6666666666666666
+70.0,4.0,1.0,4.0,0.0,Man,Rural,Ghana,Part time,Yes,0.34523809523809523
+54.0,4.0,2.0,1.0,4.0,Woman,Urban,Congo-Brazzaville,"Not working, not looking",Yes,0.38095238095238093
+38.0,4.0,1.0,4.0,3.0,Man,Urban,Gambia,Full time,No,0.42857142857142855
+28.0,5.0,1.0,2.0,4.0,Man,Rural,Cote d'Ivoire,"Not working, not looking",No,0.4880952380952381
+38.0,8.0,3.0,2.0,4.0,Man,Urban,Gabon,Full time,No,0.41666666666666663
+45.0,2.0,3.0,5.0,0.0,Woman,Rural,Kenya,"Not working, looking",No,0.6904761904761905
+65.0,5.0,3.0,4.0,0.0,Man,Urban,South Africa,"Not working, not looking",No,0.3095238095238095
+30.0,6.0,2.0,5.0,4.0,Man,Urban,Ghana,Full time,No,0.5714285714285714
+18.0,4.0,1.0,5.0,0.0,Man,Rural,Tanzania,"Not working, looking",No,0.41666666666666663
+35.0,8.0,2.0,4.0,4.0,Man,Urban,Benin,Part time,No,0.7023809523809523
+18.0,5.0,3.0,4.0,4.0,Man,Rural,Congo-Brazzaville,"Not working, not looking",No,0.7142857142857143
+37.0,6.0,3.0,4.0,0.0,Woman,Rural,Uganda,Part time,No,0.6071428571428571
+39.0,3.0,1.0,4.0,0.0,Man,Urban,Liberia,"Not working, looking",No,0.7857142857142857
+28.0,4.0,1.0,1.0,0.0,Man,Urban,Guinea-Bissau,"Not working, not looking",No,0.4880952380952381
+31.0,2.0,1.0,2.0,4.0,Woman,Urban,Uganda,"Not working, looking",No,0.9047619047619049
+44.0,7.0,3.0,5.0,4.0,Man,Urban,Mauritania,Part time,No,0.3333333333333333
+47.0,5.0,1.0,4.0,4.0,Man,Urban,Nigeria,Full time,No,0.5238095238095238
+30.0,2.0,1.0,2.0,0.0,Man,Rural,Chad,"Not working, not looking",No,0.5
+62.0,2.0,2.0,4.0,3.0,Woman,Urban,Mauritius,"Not working, not looking",No,0.5833333333333334
+25.0,4.0,1.0,3.0,0.0,Man,Urban,Liberia,"Not working, looking",No,0.5595238095238095
+52.0,0.0,1.0,4.0,0.0,Woman,Urban,Benin,"Not working, not looking",No,0.8928571428571429
+38.0,6.0,1.0,2.0,4.0,Woman,Rural,Nigeria,Full time,No,0.5
+35.0,8.0,2.0,2.0,4.0,Man,Rural,Eswatini,Full time,No,0.5595238095238095
+28.0,3.0,1.0,4.0,4.0,Woman,Urban,Gambia,Part time,No,0.4523809523809524
+30.0,3.0,2.0,2.0,4.0,Man,Urban,Ghana,Full time,No,0.5952380952380951
+74.0,0.0,2.0,5.0,0.0,Woman,Urban,Senegal,"Not working, not looking",No,0.4047619047619047
+60.0,9.0,2.0,4.0,4.0,Man,Urban,Angola,Full time,No,0.6904761904761905
+38.0,4.0,1.0,4.0,4.0,Man,Rural,Zimbabwe,"Not working, looking",No,0.5952380952380951
+26.0,4.0,3.0,4.0,0.0,Woman,Rural,Cameroon,"Not working, not looking",No,0.75
+69.0,4.0,3.0,2.0,0.0,Man,Rural,Guinea,"Not working, not looking",No,0.5476190476190476
+52.0,2.0,2.0,4.0,0.0,Woman,Urban,Cote d'Ivoire,"Not working, not looking",No,0.4880952380952381
+32.0,3.0,2.0,4.0,0.0,Woman,Rural,Eswatini,"Not working, looking",No,0.5595238095238095
+30.0,4.0,1.0,1.0,0.0,Woman,Urban,Congo-Brazzaville,Full time,No,0.7142857142857143
+18.0,7.0,3.0,4.0,4.0,Woman,Urban,Zimbabwe,"Not working, not looking",No,0.7976190476190476
+46.0,0.0,1.0,4.0,0.0,Woman,Urban,Benin,"Not working, not looking",No,0.8214285714285714
+54.0,6.0,2.0,3.0,4.0,Man,Urban,Seychelles,Part time,No,0.5952380952380951
+37.0,4.0,1.0,1.0,2.0,Man,Urban,Cameroon,"Not working, looking",No,0.5476190476190476
+40.0,5.0,2.0,2.0,4.0,Woman,Urban,Tanzania,"Not working, not looking",No,0.5357142857142857
+36.0,4.0,3.0,4.0,2.0,Man,Urban,Cameroon,"Not working, not looking",No,0.41666666666666663
+44.0,4.0,2.0,4.0,0.0,Man,Rural,Guinea,"Not working, looking",No,0.7261904761904763
+26.0,0.0,3.0,4.0,0.0,Woman,Rural,Guinea-Bissau,"Not working, not looking",Yes,0.6428571428571429
+51.0,5.0,2.0,5.0,0.0,Man,Rural,Uganda,Full time,No,0.38095238095238093
+28.0,4.0,2.0,3.0,3.0,Man,Urban,Congo-Brazzaville,"Not working, not looking",Yes,0.5952380952380951
+46.0,4.0,2.0,5.0,4.0,Man,Urban,Eswatini,"Not working, looking",No,0.4047619047619047
+40.0,0.0,1.0,5.0,0.0,Man,Rural,Chad,"Not working, looking",No,0.7857142857142857
+68.0,4.0,4.0,4.0,1.0,Woman,Urban,Liberia,Part time,Yes,0.7857142857142857
+78.0,0.0,3.0,3.0,0.0,Man,Rural,Mali,"Not working, not looking",No,0.619047619047619
+24.0,6.0,1.0,2.0,0.0,Woman,Rural,Malawi,"Not working, looking",No,0.738095238095238
+50.0,0.0,1.0,5.0,0.0,Woman,Rural,Mali,"Not working, not looking",No,0.19047619047619047
+32.0,4.0,2.0,4.0,3.0,Man,Urban,Cabo Verde,Full time,No,0.6785714285714286
+53.0,1.0,1.0,4.0,0.0,Man,Rural,Senegal,"Not working, looking",No,0.869047619047619
+54.0,3.0,3.0,2.0,0.0,Man,Rural,Malawi,"Not working, looking",No,0.15476190476190474
+40.0,1.0,2.0,1.0,0.0,Woman,Rural,Mauritania,"Not working, looking",No,0.38095238095238093
+37.0,4.0,2.0,4.0,4.0,Man,Urban,Cabo Verde,Part time,No,0.34523809523809523
+22.0,7.0,2.0,4.0,4.0,Man,Rural,Mauritius,"Not working, not looking",No,0.369047619047619
+21.0,3.0,2.0,4.0,3.0,Man,Urban,Uganda,"Not working, looking",Yes,0.9642857142857143
+24.0,5.0,3.0,4.0,2.0,Man,Rural,Eswatini,"Not working, looking",No,0.6309523809523808
+23.0,3.0,2.0,4.0,0.0,Man,Rural,Lesotho,"Not working, not looking",No,0.7261904761904762
+24.0,2.0,1.0,4.0,4.0,Man,Urban,Cote d'Ivoire,"Not working, not looking",No,0.7261904761904762
+50.0,5.0,2.0,4.0,3.0,Man,Urban,South Africa,Full time,No,0.047619047619047616
+76.0,0.0,1.0,2.0,0.0,Man,Rural,Tunisia,"Not working, not looking",No,0.07142857142857142
+20.0,5.0,2.0,4.0,3.0,Man,Urban,South Africa,"Not working, looking",No,0.4642857142857143
+55.0,2.0,2.0,2.0,0.0,Man,Rural,Togo,"Not working, not looking",No,0.34523809523809523
+21.0,6.0,2.0,4.0,4.0,Woman,Rural,Kenya,"Not working, looking",No,0.8333333333333333
+74.0,2.0,1.0,5.0,0.0,Man,Urban,Seychelles,"Not working, not looking",No,0.5714285714285714
+34.0,0.0,3.0,4.0,4.0,Woman,Urban,Morocco,"Not working, looking",No,0.5952380952380951
+25.0,3.0,2.0,4.0,0.0,Woman,Rural,Senegal,"Not working, not looking",No,0.7261904761904762
+32.0,4.0,3.0,2.0,0.0,Man,Rural,Guinea,"Not working, looking",No,0.6666666666666666
+49.0,2.0,1.0,5.0,0.0,Woman,Rural,Cameroon,"Not working, not looking",No,0.3333333333333333
+19.0,5.0,3.0,1.0,4.0,Man,Urban,Congo-Brazzaville,Full time,Yes,0.7261904761904762
+29.0,7.0,2.0,2.0,4.0,Man,Urban,Zambia,"Not working, not looking",No,0.6666666666666666
+52.0,2.0,2.0,4.0,3.0,Woman,Rural,Mauritius,Full time,No,0.6428571428571429
+19.0,7.0,2.0,4.0,4.0,Man,Rural,Comoros,"Not working, not looking",No,0.619047619047619
+43.0,1.0,3.0,5.0,0.0,Woman,Rural,Nigeria,"Not working, looking",No,0.6071428571428571
+33.0,0.0,2.0,5.0,4.0,Man,Rural,Comoros,Part time,Yes,0.4523809523809524
+34.0,7.0,4.0,5.0,4.0,Woman,Urban,Chad,"Not working, looking",No,0.16666666666666666
+22.0,4.0,2.0,4.0,0.0,Woman,Rural,Chad,"Not working, not looking",No,0.6309523809523808
+47.0,2.0,2.0,5.0,0.0,Man,Urban,Uganda,Part time,No,0.5595238095238095
+32.0,0.0,2.0,5.0,4.0,Woman,Urban,Cabo Verde,"Not working, looking",No,0.6547619047619049
+47.0,3.0,2.0,4.0,0.0,Man,Rural,Uganda,"Not working, looking",No,0.6309523809523808
+28.0,6.0,1.0,4.0,4.0,Woman,Urban,Kenya,Full time,No,0.6309523809523808
+26.0,3.0,2.0,2.0,1.0,Woman,Rural,Zimbabwe,"Not working, looking",No,0.4404761904761904
+20.0,4.0,2.0,4.0,0.0,Man,Rural,Zimbabwe,"Not working, not looking",Yes,0.5952380952380951
+29.0,5.0,3.0,4.0,0.0,Man,Rural,Madagascar,"Not working, looking",No,0.4047619047619047
+41.0,4.0,2.0,5.0,0.0,Man,Urban,Congo-Brazzaville,Part time,No,0.3333333333333333
+25.0,6.0,3.0,4.0,4.0,Woman,Urban,Kenya,"Not working, looking",Yes,0.6309523809523808
+28.0,3.0,1.0,1.0,0.0,Woman,Urban,Tanzania,"Not working, looking",No,0.2738095238095238
+22.0,4.0,2.0,4.0,0.0,Man,Urban,Madagascar,Full time,No,0.5476190476190476
+25.0,4.0,2.0,4.0,0.0,Woman,Rural,Madagascar,"Not working, not looking",No,0.21428571428571427
+53.0,4.0,1.0,4.0,1.0,Man,Rural,Gabon,Part time,Yes,0.23809523809523808
+54.0,6.0,1.0,5.0,3.0,Man,Urban,Ghana,Full time,Yes,0.47619047619047616
+38.0,3.0,2.0,4.0,4.0,Man,Urban,Mauritania,Part time,No,0.2738095238095238
+50.0,2.0,2.0,4.0,0.0,Woman,Rural,Benin,"Not working, not looking",Yes,0.9285714285714286
+30.0,1.0,1.0,4.0,3.0,Woman,Rural,Gambia,Part time,Yes,0.38095238095238093
+65.0,2.0,2.0,4.0,0.0,Man,Urban,Uganda,Full time,Yes,0.9523809523809523
+33.0,5.0,3.0,4.0,3.0,Man,Peri-Urban,Botswana,"Not working, not looking",No,0.47619047619047616
+45.0,2.0,3.0,4.0,3.0,Man,Urban,Tanzania,Part time,No,0.38095238095238093
+36.0,0.0,2.0,4.0,0.0,Woman,Rural,Benin,"Not working, not looking",Yes,0.7083333333333334
+25.0,3.0,2.0,4.0,0.0,Woman,Rural,Togo,"Not working, looking",No,0.5833333333333333
+19.0,0.0,1.0,4.0,0.0,Woman,Urban,Mali,"Not working, looking",No,0.4880952380952381
+23.0,4.0,2.0,2.0,4.0,Woman,Urban,Mauritania,"Not working, looking",No,0.13095238095238096
+27.0,3.0,2.0,1.0,4.0,Man,Rural,Uganda,Full time,No,0.41666666666666663
+37.0,7.0,2.0,4.0,3.0,Woman,Rural,Senegal,"Not working, not looking",No,0.5833333333333334
+35.0,2.0,1.0,4.0,3.0,Woman,Urban,Sao Tome and Principe,Part time,No,0.7857142857142857
+49.0,1.0,1.0,3.0,0.0,Man,Urban,Sierra Leone,Part time,No,0.2857142857142857
+36.0,2.0,1.0,4.0,3.0,Woman,Rural,Cote d'Ivoire,"Not working, looking",No,0.6309523809523808
+36.0,3.0,2.0,5.0,0.0,Woman,Rural,Madagascar,Part time,No,0.4523809523809524
+22.0,6.0,2.0,1.0,4.0,Man,Rural,Tanzania,"Not working, looking",No,0.75
+30.0,4.0,1.0,4.0,4.0,Man,Urban,Morocco,Full time,No,0.4523809523809524
+35.0,4.0,2.0,2.0,4.0,Woman,Urban,Benin,"Not working, not looking",No,0.6904761904761905
+67.0,6.0,3.0,1.0,4.0,Woman,Urban,Seychelles,Full time,Yes,0.20833333333333334
+32.0,7.0,1.0,4.0,3.0,Man,Urban,Senegal,Full time,No,0.7976190476190477
+30.0,2.0,1.0,4.0,0.0,Man,Rural,Uganda,Part time,No,0.7261904761904762
+35.0,2.0,3.0,4.0,0.0,Woman,Rural,Chad,"Not working, not looking",Yes,0.38095238095238093
+35.0,9.0,3.0,5.0,4.0,Man,Urban,Eswatini,Full time,No,0.5595238095238095
+44.0,4.0,3.0,5.0,4.0,Woman,Rural,Cote d'Ivoire,"Not working, not looking",No,0.4523809523809524
+41.0,5.0,4.0,4.0,2.0,Woman,Urban,South Africa,"Not working, looking",No,0.2619047619047619
+18.0,2.0,2.0,5.0,0.0,Woman,Rural,Sierra Leone,"Not working, not looking",No,0.6309523809523808
+39.0,3.0,2.0,4.0,4.0,Woman,Urban,Liberia,"Not working, looking",No,0.2857142857142857
+45.0,5.0,2.0,4.0,2.0,Man,Rural,Cameroon,Full time,No,0.6666666666666666
+62.0,5.0,3.0,3.0,4.0,Woman,Urban,South Africa,"Not working, not looking",No,0.4861111111111111
+67.0,6.0,1.0,5.0,0.0,Woman,Urban,Seychelles,"Not working, not looking",No,0.5238095238095238
+47.0,5.0,1.0,4.0,4.0,Man,Urban,Namibia,Full time,Yes,0.5238095238095238
+42.0,8.0,4.0,1.0,4.0,Man,Urban,Benin,"Not working, not looking",No,0.8928571428571429
+45.0,4.0,2.0,2.0,2.0,Man,Urban,Chad,"Not working, looking",No,0.3194444444444444
+40.0,2.0,4.0,5.0,1.0,Man,Rural,Lesotho,"Not working, looking",No,0.7142857142857143
+24.0,2.0,3.0,1.0,0.0,Man,Rural,Uganda,"Not working, looking",No,0.3333333333333333
+36.0,8.0,2.0,2.0,4.0,Woman,Urban,Cameroon,"Not working, looking",Yes,0.29761904761904756
+39.0,4.0,3.0,2.0,4.0,Woman,Urban,Angola,Part time,No,0.8333333333333334
+42.0,6.0,2.0,4.0,2.0,Man,Rural,Kenya,"Not working, looking",No,0.5952380952380951
+26.0,1.0,3.0,5.0,1.0,Woman,Rural,Mauritania,"Not working, looking",No,0.369047619047619
+66.0,5.0,2.0,4.0,3.0,Man,Rural,Guinea-Bissau,"Not working, not looking",Yes,0.869047619047619
+46.0,4.0,1.0,1.0,4.0,Man,Rural,Gabon,Full time,No,0.5238095238095238
+28.0,6.0,1.0,5.0,4.0,Man,Urban,Mali,"Not working, not looking",No,0.5
+40.0,5.0,1.0,4.0,4.0,Woman,Rural,Senegal,"Not working, looking",No,0.4880952380952381
+68.0,0.0,2.0,5.0,0.0,Man,Rural,Ghana,Part time,No,0.5714285714285714
+25.0,7.0,3.0,5.0,4.0,Man,Urban,Benin,"Not working, looking",No,0.5952380952380951
+22.0,4.0,2.0,4.0,4.0,Man,Rural,Togo,"Not working, not looking",Yes,0.32142857142857145
+37.0,3.0,3.0,4.0,2.0,Man,Rural,Uganda,Part time,No,0.5595238095238095
+55.0,0.0,2.0,2.0,4.0,Man,Urban,Ghana,"Not working, not looking",Yes,0.6666666666666666
+18.0,3.0,1.0,5.0,4.0,Man,Urban,Angola,"Not working, looking",No,0.4523809523809524
+42.0,3.0,3.0,5.0,0.0,Woman,Rural,Sao Tome and Principe,"Not working, not looking",No,0.7857142857142857
+45.0,4.0,1.0,2.0,2.0,Man,Rural,Gabon,Full time,No,0.5595238095238095
+19.0,5.0,1.0,4.0,0.0,Man,Rural,Nigeria,"Not working, not looking",No,0.7261904761904763
+41.0,2.0,3.0,4.0,4.0,Man,Rural,Comoros,"Not working, looking",No,0.6785714285714286
+20.0,4.0,2.0,2.0,0.0,Woman,Urban,Madagascar,"Not working, looking",No,0.4642857142857143
+33.0,0.0,1.0,4.0,3.0,Man,Urban,Cote d'Ivoire,"Not working, not looking",No,0.9285714285714286
+35.0,2.0,2.0,4.0,0.0,Woman,Rural,Sierra Leone,Part time,No,0.7142857142857143
+23.0,3.0,2.0,4.0,0.0,Woman,Urban,Gambia,"Not working, looking",No,0.16666666666666666
+45.0,3.0,4.0,3.0,0.0,Woman,Urban,Gambia,Full time,No,0.38095238095238093
+28.0,9.0,2.0,4.0,4.0,Woman,Urban,Ghana,Full time,No,0.8571428571428571
+50.0,8.0,3.0,4.0,4.0,Man,Urban,South Africa,Full time,No,0.38095238095238093
+42.0,4.0,1.0,5.0,4.0,Woman,Urban,Togo,"Not working, looking",No,0.4642857142857143
+26.0,8.0,1.0,2.0,4.0,Man,Rural,Ghana,"Not working, looking",Yes,0.38095238095238093
+50.0,1.0,3.0,4.0,1.0,Woman,Rural,Sierra Leone,"Not working, looking",No,0.7261904761904762
+40.0,4.0,2.0,4.0,0.0,Man,Rural,Chad,"Not working, not looking",No,0.7261904761904762
+74.0,3.0,3.0,4.0,0.0,Man,Rural,Madagascar,Full time,No,0.29761904761904756
+25.0,1.0,3.0,3.0,0.0,Man,Rural,Benin,Part time,No,0.7738095238095237
+26.0,6.0,1.0,1.0,3.0,Woman,Rural,Uganda,Full time,No,0.6785714285714286
+20.0,3.0,1.0,3.0,0.0,Woman,Urban,Benin,Part time,No,0.16666666666666666
+25.0,4.0,2.0,4.0,4.0,Man,Urban,Cabo Verde,Full time,Yes,0.8214285714285714
+38.0,8.0,3.0,2.0,4.0,Man,Rural,South Africa,Part time,No,0.5476190476190476
+70.0,5.0,1.0,4.0,2.0,Woman,Urban,Cabo Verde,"Not working, not looking",Yes,0.5476190476190476
+42.0,2.0,1.0,4.0,0.0,Woman,Rural,Cote d'Ivoire,"Not working, not looking",No,0.4880952380952381
+34.0,3.0,1.0,4.0,0.0,Man,Rural,Tanzania,Full time,No,0.6309523809523808
+20.0,5.0,2.0,4.0,4.0,Woman,Peri-Urban,Botswana,"Not working, looking",No,0.34523809523809523
+18.0,4.0,3.0,4.0,4.0,Man,Rural,South Africa,"Not working, not looking",No,0.34523809523809523
+23.0,3.0,2.0,4.0,0.0,Woman,Urban,Ghana,Full time,No,0.5595238095238095
+36.0,8.0,1.0,1.0,2.0,Woman,Rural,Nigeria,"Not working, looking",No,0.6904761904761905
+40.0,2.0,3.0,4.0,4.0,Man,Urban,Tunisia,Part time,Yes,0.5595238095238095
+26.0,5.0,4.0,5.0,0.0,Woman,Urban,Tunisia,"Not working, not looking",No,0.761904761904762
+22.0,7.0,3.0,4.0,4.0,Woman,Rural,Morocco,"Not working, not looking",No,0.5952380952380951
+52.0,8.0,2.0,5.0,4.0,Man,Urban,Senegal,Full time,No,0.35714285714285715
+45.0,2.0,2.0,1.0,4.0,Man,Urban,Senegal,Full time,Yes,0.8452380952380951
+60.0,4.0,2.0,4.0,0.0,Man,Urban,Congo-Brazzaville,Part time,No,0.5119047619047619
+60.0,2.0,2.0,3.0,0.0,Man,Rural,Malawi,"Not working, not looking",Yes,0.6547619047619048
+40.0,2.0,1.0,4.0,4.0,Woman,Urban,Cote d'Ivoire,Full time,No,0.7023809523809523
+60.0,5.0,2.0,4.0,4.0,Woman,Urban,Sierra Leone,"Not working, not looking",No,0.5119047619047619
+72.0,0.0,1.0,2.0,4.0,Woman,Urban,Sao Tome and Principe,"Not working, not looking",No,0.5238095238095238
+46.0,8.0,3.0,3.0,4.0,Woman,Urban,Morocco,Full time,No,0.9285714285714286
+34.0,8.0,3.0,4.0,4.0,Man,Urban,South Africa,Full time,No,0.35714285714285715
+42.0,5.0,2.0,2.0,0.0,Man,Rural,Eswatini,"Not working, looking",No,0.38095238095238093
+37.0,4.0,3.0,1.0,4.0,Man,Urban,Guinea,"Not working, looking",No,0.8095238095238094
+22.0,5.0,2.0,5.0,1.0,Woman,Rural,Sierra Leone,"Not working, looking",No,0.7023809523809523
+53.0,4.0,1.0,4.0,2.0,Man,Urban,Chad,Full time,No,0.6071428571428571
+23.0,4.0,4.0,4.0,3.0,Woman,Urban,Cameroon,Part time,No,0.38095238095238093
+18.0,5.0,2.0,4.0,1.0,Woman,Urban,Tanzania,"Not working, not looking",No,0.39285714285714285
+65.0,3.0,2.0,4.0,2.0,Man,Urban,Cabo Verde,"Not working, not looking",No,0.5476190476190477
+22.0,7.0,2.0,4.0,3.0,Woman,Urban,Sierra Leone,"Not working, not looking",No,0.6666666666666666
+50.0,4.0,1.0,5.0,0.0,Man,Rural,Madagascar,"Not working, not looking",No,0.6428571428571429
+36.0,2.0,4.0,1.0,3.0,Man,Urban,Cote d'Ivoire,"Not working, looking",No,0.4880952380952381
+46.0,4.0,1.0,5.0,4.0,Man,Rural,Senegal,Full time,Yes,0.7976190476190476
+61.0,5.0,4.0,4.0,3.0,Man,Urban,Tanzania,Full time,No,0.6071428571428571
+23.0,4.0,1.0,4.0,3.0,Man,Urban,Ghana,Full time,No,0.7023809523809523
+52.0,1.0,2.0,2.0,2.0,Man,Rural,Mauritania,"Not working, looking",No,0.3095238095238095
+18.0,4.0,2.0,4.0,3.0,Man,Urban,Senegal,"Not working, not looking",No,0.39285714285714285
+55.0,3.0,3.0,4.0,0.0,Woman,Rural,Zimbabwe,"Not working, looking",No,0.5952380952380951
+39.0,2.0,2.0,5.0,1.0,Man,Rural,Ghana,Full time,No,0.20238095238095236
+22.0,6.0,2.0,4.0,3.0,Woman,Rural,Ghana,"Not working, looking",No,0.8571428571428571
+57.0,2.0,3.0,4.0,0.0,Woman,Rural,Madagascar,"Not working, not looking",No,0.11904761904761904
