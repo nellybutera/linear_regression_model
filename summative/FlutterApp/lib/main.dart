@@ -57,6 +57,9 @@ const employmentOptions = [
   'Part time',
   'Full time',
 ];
+const genders = ['Man', 'Woman'];
+const areas = ['Urban', 'Rural', 'Peri-Urban'];
+const yesNo = ['No', 'Yes'];
 
 void main() {
   runApp(const BaraLensApp());
@@ -93,12 +96,12 @@ class _PredictionPageState extends State<PredictionPage> {
   final auRecognitionController = TextEditingController();
   final socialMediaController = TextEditingController();
 
-  // categorical features
-  String? gender;
-  String? area;
-  String? country;
-  String? employment;
-  String? afcftaAware;
+  // categorical features (typed as text, matched to the values the API accepts)
+  final genderController = TextEditingController();
+  final areaController = TextEditingController();
+  final countryController = TextEditingController();
+  final employmentController = TextEditingController();
+  final afcftaController = TextEditingController();
 
   bool loading = false;
   String? resultText;
@@ -106,11 +109,20 @@ class _PredictionPageState extends State<PredictionPage> {
 
   @override
   void dispose() {
-    ageController.dispose();
-    educationController.dispose();
-    borderEaseController.dispose();
-    auRecognitionController.dispose();
-    socialMediaController.dispose();
+    for (final c in [
+      ageController,
+      educationController,
+      borderEaseController,
+      auRecognitionController,
+      socialMediaController,
+      genderController,
+      areaController,
+      countryController,
+      employmentController,
+      afcftaController,
+    ]) {
+      c.dispose();
+    }
     super.dispose();
   }
 
@@ -123,13 +135,88 @@ class _PredictionPageState extends State<PredictionPage> {
     return null;
   }
 
+  // Ignore case, spaces and commas so "not working looking" matches "Not working, looking"
+  String simplify(String text) =>
+      text.toLowerCase().replaceAll(RegExp(r'[^a-z]'), '');
+
+  String? matchOption(String value, List<String> options) {
+    for (final option in options) {
+      if (simplify(option) == simplify(value)) return option;
+    }
+    return null;
+  }
+
+  String? checkChoice(String? value, List<String> options, String allowed) {
+    if (value == null || value.trim().isEmpty) return 'Required';
+    if (matchOption(value, options) == null) return 'Must be $allowed';
+    return null;
+  }
+
+  // label, controller and check for every field, used to list all problems in the result box
+  List<(String, TextEditingController, String? Function(String?))> get fields =>
+      [
+        ('Age', ageController, (v) => checkWholeNumber(v, 18, 100)),
+        (
+          'Education level',
+          educationController,
+          (v) => checkWholeNumber(v, 0, 9),
+        ),
+        (
+          'Ease of crossing borders',
+          borderEaseController,
+          (v) => checkWholeNumber(v, 1, 4),
+        ),
+        (
+          'AU recognises our needs',
+          auRecognitionController,
+          (v) => checkWholeNumber(v, 1, 5),
+        ),
+        (
+          'News from social media',
+          socialMediaController,
+          (v) => checkWholeNumber(v, 0, 4),
+        ),
+        (
+          'Gender',
+          genderController,
+          (v) => checkChoice(v, genders, 'Man or Woman'),
+        ),
+        (
+          'Area',
+          areaController,
+          (v) => checkChoice(v, areas, 'Urban, Rural or Peri-Urban'),
+        ),
+        (
+          'Country',
+          countryController,
+          (v) => checkChoice(v, countries, 'one of the 38 survey countries'),
+        ),
+        (
+          'Employment',
+          employmentController,
+          (v) => checkChoice(v, employmentOptions, 'one of the 4 options'),
+        ),
+        (
+          'Heard of AfCFTA',
+          afcftaController,
+          (v) => checkChoice(v, yesNo, 'Yes or No'),
+        ),
+      ];
+
   Future<void> predict() async {
     setState(() {
       resultText = null;
       errorText = null;
     });
-    if (!_formKey.currentState!.validate()) {
-      setState(() => errorText = 'Please fix the highlighted fields.');
+    _formKey.currentState!.validate(); // highlights the bad fields
+    final problems = [
+      for (final (label, controller, check) in fields)
+        if (check(controller.text) case final message?) '$label: $message',
+    ];
+    if (problems.isNotEmpty) {
+      setState(
+        () => errorText = 'Please fix these fields:\n${problems.join('\n')}',
+      );
       return;
     }
 
@@ -139,11 +226,11 @@ class _PredictionPageState extends State<PredictionPage> {
       'border_ease': int.parse(borderEaseController.text.trim()),
       'au_recognition': int.parse(auRecognitionController.text.trim()),
       'social_media_news': int.parse(socialMediaController.text.trim()),
-      'gender': gender,
-      'area': area,
-      'country': country,
-      'employment': employment,
-      'afcfta_aware': afcftaAware,
+      'gender': matchOption(genderController.text, genders),
+      'area': matchOption(areaController.text, areas),
+      'country': matchOption(countryController.text, countries),
+      'employment': matchOption(employmentController.text, employmentOptions),
+      'afcfta_aware': matchOption(afcftaController.text, yesNo),
     };
 
     setState(() => loading = true);
@@ -203,49 +290,21 @@ class _PredictionPageState extends State<PredictionPage> {
     return detail.toString();
   }
 
-  Widget numberField(
-    TextEditingController controller,
-    String label,
-    String hint,
-    int min,
-    int max,
-  ) {
+  // One labelled text field per model input (10 in total)
+  Widget inputField(int index, String hint, {bool number = false}) {
+    final (label, controller, check) = fields[index];
     return Padding(
       padding: const EdgeInsets.only(bottom: 12),
       child: TextFormField(
         controller: controller,
-        keyboardType: TextInputType.number,
+        keyboardType: number ? TextInputType.number : TextInputType.text,
         decoration: InputDecoration(
           labelText: label,
           helperText: hint,
-          helperMaxLines: 2,
+          helperMaxLines: 3,
           border: const OutlineInputBorder(),
         ),
-        validator: (value) => checkWholeNumber(value, min, max),
-      ),
-    );
-  }
-
-  Widget dropdownField(
-    String label,
-    String? value,
-    List<String> options,
-    ValueChanged<String?> onChanged,
-  ) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
-      child: DropdownButtonFormField<String>(
-        initialValue: value,
-        isExpanded: true,
-        decoration: InputDecoration(
-          labelText: label,
-          border: const OutlineInputBorder(),
-        ),
-        items: options
-            .map((o) => DropdownMenuItem(value: o, child: Text(o)))
-            .toList(),
-        onChanged: onChanged,
-        validator: (v) => v == null ? 'Please choose one' : null,
+        validator: check,
       ),
     );
   }
@@ -269,61 +328,40 @@ class _PredictionPageState extends State<PredictionPage> {
                   'based on Afrobarometer Round 10 survey answers.',
                 ),
                 const SizedBox(height: 16),
-                numberField(ageController, 'Age', '18 to 100', 18, 100),
-                numberField(
-                  educationController,
-                  'Education level',
+                inputField(0, 'Whole number, 18 to 100', number: true),
+                inputField(
+                  1,
                   '0 = no schooling, 3 = primary, 5 = secondary, 8 = university, 9 = post-graduate',
-                  0,
-                  9,
+                  number: true,
                 ),
-                numberField(
-                  borderEaseController,
-                  'Ease of crossing borders',
+                inputField(
+                  2,
                   '1 = very difficult, 2 = difficult, 3 = easy, 4 = very easy',
-                  1,
-                  4,
+                  number: true,
                 ),
-                numberField(
-                  auRecognitionController,
-                  'AU recognises our country\'s needs',
+                inputField(
+                  3,
                   '1 = strongly disagree ... 3 = neutral ... 5 = strongly agree',
-                  1,
-                  5,
+                  number: true,
                 ),
-                numberField(
-                  socialMediaController,
-                  'News from social media',
-                  '0 = never, 1 = < once a month, 2 = few times a month, 3 = few times a week, 4 = every day',
-                  0,
+                inputField(
                   4,
+                  '0 = never, 1 = < once a month, 2 = few times a month, 3 = few times a week, 4 = every day',
+                  number: true,
                 ),
-                dropdownField('Gender', gender, [
-                  'Man',
-                  'Woman',
-                ], (v) => setState(() => gender = v)),
-                dropdownField('Area', area, [
-                  'Urban',
-                  'Rural',
-                  'Peri-Urban',
-                ], (v) => setState(() => area = v)),
-                dropdownField(
-                  'Country',
-                  country,
-                  countries,
-                  (v) => setState(() => country = v),
+                inputField(5, 'Man or Woman'),
+                inputField(6, 'Urban, Rural or Peri-Urban'),
+                inputField(
+                  7,
+                  'One of the 38 survey countries, e.g. Kenya, Ghana, Nigeria',
                 ),
-                dropdownField(
-                  'Employment',
-                  employment,
-                  employmentOptions,
-                  (v) => setState(() => employment = v),
+                inputField(
+                  8,
+                  'Full time, Part time, Not working looking, or Not working not looking',
                 ),
-                dropdownField(
-                  'Heard of AfCFTA (free trade area)?',
-                  afcftaAware,
-                  ['No', 'Yes'],
-                  (v) => setState(() => afcftaAware = v),
+                inputField(
+                  9,
+                  'Heard of the African free trade area? Yes or No',
                 ),
                 const SizedBox(height: 8),
                 FilledButton(
