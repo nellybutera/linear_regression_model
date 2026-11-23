@@ -214,6 +214,7 @@ class _PredictionPageState extends State<PredictionPage> {
         decoration: InputDecoration(
           labelText: label,
           helperText: hint,
+          helperMaxLines: 2,
           border: const OutlineInputBorder(),
         ),
         validator: (value) => checkWholeNumber(value, min, max),
