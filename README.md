@@ -51,3 +51,13 @@ uv sync
 uv run uvicorn prediction:app --reload
 # open http://127.0.0.1:8000/docs
 ```
+
+### Mobile app (Flutter)
+Needs Flutter installed and an Android emulator running (or a phone with USB debugging on).
+```bash
+cd summative/FlutterApp
+flutter pub get
+flutter run
+```
+The app calls the live API at https://baralens-api.onrender.com by default. Fill in the 10 fields and tap **Predict**.
+To use a local API instead: `flutter run --dart-define=API_URL=http://10.0.2.2:8000` (10.0.2.2 is the PC's localhost from the Android emulator).
