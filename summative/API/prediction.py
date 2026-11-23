@@ -10,9 +10,8 @@ from retrain import FEATURES, load_model, retrain_lock, retrain_model, validate_
 
 app = FastAPI(
     title="BaraLens API",
-    description="Predicts a Regional Openness Index (0 = closed, 1 = open to African regional integration) "
-                "from Afrobarometer Round 10 survey answers.",
-    version="1.0.0",
+    description="Predicts how open someone is to African regional integration (score from 0 to 1). "
+                "Model trained on Afrobarometer Round 10 survey data.",
 )
 
 # Explicit list of origins, no "*". Browsers reject "*" together with credentials anyway.
@@ -46,16 +45,16 @@ Country = Literal[
 
 
 class SurveyInput(BaseModel):
-    age: int = Field(..., strict=True, ge=18, le=100, description="Age in years (survey covers adults 18+)")
-    education: int = Field(..., strict=True, ge=0, le=9, description="0 = no formal schooling ... 5 = secondary ... 8 = university ... 9 = post-graduate")
-    border_ease: int = Field(..., strict=True, ge=1, le=4, description="How easy is it to cross borders in your region: 1 = very difficult ... 4 = very easy")
-    au_recognition: int = Field(..., strict=True, ge=1, le=5, description="'The AU recognises our country's needs': 1 = strongly disagree ... 5 = strongly agree")
-    social_media_news: int = Field(..., strict=True, ge=0, le=4, description="News from social media: 0 = never ... 4 = every day")
+    age: int = Field(..., strict=True, ge=18, le=100, description="18 to 100")
+    education: int = Field(..., strict=True, ge=0, le=9, description="0 = no school, 5 = secondary, 9 = postgrad")
+    border_ease: int = Field(..., strict=True, ge=1, le=4, description="1 = very difficult, 4 = very easy")
+    au_recognition: int = Field(..., strict=True, ge=1, le=5, description="does the AU care about our needs? 1 = strongly disagree, 5 = strongly agree")
+    social_media_news: int = Field(..., strict=True, ge=0, le=4, description="0 = never, 4 = every day")
     gender: Literal["Man", "Woman"]
     area: Literal["Urban", "Rural", "Peri-Urban"]
     country: Country
     employment: Literal["Not working, not looking", "Not working, looking", "Part time", "Full time"]
-    afcfta_aware: Literal["No", "Yes"] = Field(..., description="Has heard of the African Continental Free Trade Area")
+    afcfta_aware: Literal["No", "Yes"]  # heard of AfCFTA?
 
     model_config = {
         "extra": "forbid",
@@ -79,7 +78,7 @@ def describe_score(score):
 
 @app.get("/")
 def home():
-    return {"message": "BaraLens API is running. Go to /docs to try it.", "model": model_bundle["model_name"]}
+    return {"message": "BaraLens API is running, go to /docs", "model": model_bundle["model_name"]}
 
 
 @app.post("/predict")
@@ -96,7 +95,7 @@ def predict(data: SurveyInput):
 
 # A normal "def" (not async) so FastAPI runs the slow training in a worker thread and /predict keeps answering
 @app.post("/retrain")
-def retrain(file: UploadFile = File(..., description="CSV with the 10 feature columns plus openness_index")):
+def retrain(file: UploadFile = File(...)):
     global model_bundle
     if not file.filename.lower().endswith(".csv"):
         raise HTTPException(status_code=400, detail="Please upload a .csv file.")
