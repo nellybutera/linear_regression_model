@@ -1,5 +1,6 @@
 import io
 import os
+import threading
 
 import joblib
 import pandas as pd
@@ -16,7 +17,7 @@ BASE_DATA_PATH = os.path.join(API_DIR, "training_data.csv")
 # a writable folder. After a restart the API falls back to the committed best_model.pkl.
 RUNTIME_DIR = os.environ.get("MODEL_DIR", "/tmp/baralens" if os.name != "nt" else os.path.join(API_DIR, "runtime"))
 RUNTIME_MODEL_PATH = os.path.join(RUNTIME_DIR, "best_model.pkl")
-RUNTIME_DATA_PATH = os.path.join(RUNTIME_DIR, "training_data.csv")
+UPLOADS_PATH = os.path.join(RUNTIME_DIR, "uploaded_rows.csv")
 
 NUMERIC_RANGES = {
     "age": (18, 100),
@@ -43,6 +44,12 @@ ALLOWED_CATEGORIES = {
 FEATURES = list(NUMERIC_RANGES) + list(ALLOWED_CATEGORIES)
 TARGET = "openness_index"
 MIN_NEW_ROWS = 20
+# A retrained model replaces the current one only if its test MSE is not more than 2% worse.
+# This stops a bad upload (e.g. every target set to 1) from silently breaking /predict.
+MAX_WORSE = 1.02
+
+# Only one retrain at a time, so two uploads can't overwrite each other's files
+retrain_lock = threading.Lock()
 
 
 def load_model():
@@ -50,6 +57,14 @@ def load_model():
     if os.path.exists(RUNTIME_MODEL_PATH):
         return joblib.load(RUNTIME_MODEL_PATH)
     return joblib.load(BASE_MODEL_PATH)
+
+
+def load_base_split():
+    # Same split as the notebook (test_size=0.2, random_state=42), so the test set is fixed
+    # and old and new models are always compared on exactly the same rows
+    base = pd.read_csv(BASE_DATA_PATH)
+    train, test = train_test_split(base, test_size=0.2, random_state=42)
+    return train, test
 
 
 def validate_training_csv(file_bytes):
@@ -73,6 +88,8 @@ def validate_training_csv(file_bytes):
         values = pd.to_numeric(df[col], errors="coerce")
         if values.isna().any():
             errors.append(f"Column '{col}' must contain numbers only.")
+        elif not (values % 1 == 0).all():
+            errors.append(f"Column '{col}' must contain whole numbers.")
         elif not values.between(low, high).all():
             errors.append(f"Column '{col}' must be between {low} and {high}.")
         df[col] = values
@@ -94,35 +111,53 @@ def validate_training_csv(file_bytes):
 
 
 def retrain_model(current_bundle, new_rows):
-    """Add the new rows to the existing training data, refit the same pipeline and return a new bundle."""
-    base_path = RUNTIME_DATA_PATH if os.path.exists(RUNTIME_DATA_PATH) else BASE_DATA_PATH
-    base = pd.read_csv(base_path)
-    combined = pd.concat([base, new_rows], ignore_index=True)
+    """Train on (original training rows + all uploaded rows) and test on the fixed test set.
+    Returns (bundle_to_use, summary). The current model is kept if the new one is clearly worse."""
+    base_train, test = load_base_split()
 
-    X = combined[FEATURES]
-    y = combined[TARGET]
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    # Keep every new row uploaded since the server started, without duplicates
+    previous_uploads = pd.read_csv(UPLOADS_PATH) if os.path.exists(UPLOADS_PATH) else pd.DataFrame(columns=new_rows.columns)
+    all_uploads = pd.concat([previous_uploads, new_rows], ignore_index=True).drop_duplicates()
+    rows_added = len(all_uploads) - len(previous_uploads)
+
+    train = pd.concat([base_train, all_uploads], ignore_index=True).drop_duplicates()
+    X_test, y_test = test[FEATURES], test[TARGET]
 
     # clone() copies the pipeline settings (scaler + encoder + model type) but not the old fitted values,
-    # so preprocessing is re-fitted on the new training split only
-    pipeline = clone(current_bundle["pipeline"])
-    pipeline.fit(X_train, y_train)
-    test_pred = pipeline.predict(X_test)
+    # so preprocessing is re-fitted on the new training data only
+    new_pipeline = clone(current_bundle["pipeline"])
+    new_pipeline.fit(train[FEATURES], train[TARGET])
+
+    old_mse = mean_squared_error(y_test, current_bundle["pipeline"].predict(X_test))
+    new_pred = new_pipeline.predict(X_test)
+    new_mse = mean_squared_error(y_test, new_pred)
+
+    summary = {
+        "model": current_bundle["model_name"],
+        "rows_uploaded": len(new_rows),
+        "new_rows_added": rows_added,
+        "training_rows": len(train),
+        "test_rows": len(test),
+        "old_test_mse": round(float(old_mse), 6),
+        "new_test_mse": round(float(new_mse), 6),
+        "new_test_r2": round(float(r2_score(y_test, new_pred)), 4),
+    }
+
+    if new_mse > old_mse * MAX_WORSE:
+        summary["model_updated"] = False
+        summary["new_rows_added"] = 0
+        summary["message"] = ("New model was worse on the test set, so the current model was kept "
+                              "and the uploaded rows were not saved.")
+        return current_bundle, summary
 
     new_bundle = dict(current_bundle)
-    new_bundle["pipeline"] = pipeline
-    new_bundle["test_mse"] = float(mean_squared_error(y_test, test_pred))
+    new_bundle["pipeline"] = new_pipeline
+    new_bundle["test_mse"] = float(new_mse)
 
     os.makedirs(RUNTIME_DIR, exist_ok=True)
     joblib.dump(new_bundle, RUNTIME_MODEL_PATH, compress=3)
-    combined.to_csv(RUNTIME_DATA_PATH, index=False)
+    all_uploads.to_csv(UPLOADS_PATH, index=False)
 
-    summary = {
-        "model": new_bundle["model_name"],
-        "rows_added": len(new_rows),
-        "total_rows": len(combined),
-        "old_test_mse": round(current_bundle.get("test_mse", float("nan")), 6),
-        "new_test_mse": round(new_bundle["test_mse"], 6),
-        "new_test_r2": round(float(r2_score(y_test, test_pred)), 4),
-    }
+    summary["model_updated"] = True
+    summary["message"] = "Model retrained and now used by /predict."
     return new_bundle, summary

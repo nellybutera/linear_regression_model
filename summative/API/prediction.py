@@ -6,7 +6,7 @@ from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel, Field
 
-from retrain import FEATURES, load_model, retrain_model, validate_training_csv
+from retrain import FEATURES, load_model, retrain_lock, retrain_model, validate_training_csv
 
 app = FastAPI(
     title="BaraLens API",
@@ -22,7 +22,6 @@ default_origins = [
     "http://localhost:8080",
     "http://localhost:5000",
     "http://127.0.0.1:8000",
-    "https://baralens-api.onrender.com",
 ]
 extra_origins = [o.strip() for o in os.environ.get("EXTRA_ORIGINS", "").split(",") if o.strip()]
 
@@ -47,11 +46,11 @@ Country = Literal[
 
 
 class SurveyInput(BaseModel):
-    age: int = Field(..., ge=18, le=100, description="Age in years (survey covers adults 18+)")
-    education: int = Field(..., ge=0, le=9, description="0 = no formal schooling ... 5 = secondary ... 8 = university ... 9 = post-graduate")
-    border_ease: int = Field(..., ge=1, le=4, description="How easy is it to cross borders in your region: 1 = very difficult ... 4 = very easy")
-    au_recognition: int = Field(..., ge=1, le=5, description="'The AU recognises our country's needs': 1 = strongly disagree ... 5 = strongly agree")
-    social_media_news: int = Field(..., ge=0, le=4, description="News from social media: 0 = never ... 4 = every day")
+    age: int = Field(..., strict=True, ge=18, le=100, description="Age in years (survey covers adults 18+)")
+    education: int = Field(..., strict=True, ge=0, le=9, description="0 = no formal schooling ... 5 = secondary ... 8 = university ... 9 = post-graduate")
+    border_ease: int = Field(..., strict=True, ge=1, le=4, description="How easy is it to cross borders in your region: 1 = very difficult ... 4 = very easy")
+    au_recognition: int = Field(..., strict=True, ge=1, le=5, description="'The AU recognises our country's needs': 1 = strongly disagree ... 5 = strongly agree")
+    social_media_news: int = Field(..., strict=True, ge=0, le=4, description="News from social media: 0 = never ... 4 = every day")
     gender: Literal["Man", "Woman"]
     area: Literal["Urban", "Rural", "Peri-Urban"]
     country: Country
@@ -95,15 +94,17 @@ def predict(data: SurveyInput):
     }
 
 
+# A normal "def" (not async) so FastAPI runs the slow training in a worker thread and /predict keeps answering
 @app.post("/retrain")
-async def retrain(file: UploadFile = File(..., description="CSV with the 10 feature columns plus openness_index")):
+def retrain(file: UploadFile = File(..., description="CSV with the 10 feature columns plus openness_index")):
     global model_bundle
     if not file.filename.lower().endswith(".csv"):
         raise HTTPException(status_code=400, detail="Please upload a .csv file.")
 
-    new_rows, errors = validate_training_csv(await file.read())
+    new_rows, errors = validate_training_csv(file.file.read())
     if errors:
         raise HTTPException(status_code=422, detail=errors)
 
-    model_bundle, summary = retrain_model(model_bundle, new_rows)
-    return {"message": "Model retrained and now used by /predict.", **summary}
+    with retrain_lock:
+        model_bundle, summary = retrain_model(model_bundle, new_rows)
+    return summary
