@@ -57,6 +57,8 @@ const employmentOptions = [
   'Part time',
   'Full time',
 ];
+const brandBlue = Color(0xFF1F5F8B);
+const brandAmber = Color(0xFFF2A541);
 const genders = ['Man', 'Woman'];
 const areas = ['Urban', 'Rural', 'Peri-Urban'];
 const yesNo = ['No', 'Yes'];
@@ -73,7 +75,19 @@ class BaraLensApp extends StatelessWidget {
     return MaterialApp(
       title: 'BaraLens',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(colorSchemeSeed: Colors.teal, useMaterial3: true),
+      theme: ThemeData(
+        colorSchemeSeed: brandBlue,
+        useMaterial3: true,
+        inputDecorationTheme: InputDecorationTheme(
+          filled: true,
+          fillColor: const Color(0xFFF8FAFC),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(12),
+            borderSide: BorderSide(color: Colors.blueGrey.shade100),
+          ),
+        ),
+      ),
       home: const PredictionPage(),
     );
   }
@@ -104,7 +118,8 @@ class _PredictionPageState extends State<PredictionPage> {
   final afcftaController = TextEditingController();
 
   bool loading = false;
-  String? resultText;
+  double? score;
+  String? interpretation;
   String? errorText;
 
   @override
@@ -205,7 +220,8 @@ class _PredictionPageState extends State<PredictionPage> {
 
   Future<void> predict() async {
     setState(() {
-      resultText = null;
+      score = null;
+      interpretation = null;
       errorText = null;
     });
     _formKey.currentState!.validate(); // highlights the bad fields
@@ -255,11 +271,10 @@ class _PredictionPageState extends State<PredictionPage> {
 
       final data = jsonDecode(response.body);
       if (response.statusCode == 200) {
-        final score = (data['openness_index'] as num).toDouble();
-        setState(
-          () => resultText =
-              'Regional Openness Index: ${score.toStringAsFixed(3)}\n${data['interpretation']}',
-        );
+        setState(() {
+          score = (data['openness_index'] as num).toDouble();
+          interpretation = data['interpretation'] as String;
+        });
       } else {
         setState(
           () => errorText =
@@ -294,17 +309,156 @@ class _PredictionPageState extends State<PredictionPage> {
   Widget inputField(int index, String hint, {bool number = false}) {
     final (label, controller, check) = fields[index];
     return Padding(
-      padding: const EdgeInsets.only(bottom: 12),
+      padding: const EdgeInsets.only(bottom: 14),
       child: TextFormField(
         controller: controller,
         keyboardType: number ? TextInputType.number : TextInputType.text,
+        textInputAction: TextInputAction.next,
         decoration: InputDecoration(
           labelText: label,
           helperText: hint,
-          helperMaxLines: 3,
-          border: const OutlineInputBorder(),
+          helperMaxLines: 2,
         ),
         validator: check,
+      ),
+    );
+  }
+
+  // White card with a small heading, groups related fields
+  Widget section(String title, IconData icon, List<Widget> children) {
+    return Card(
+      margin: const EdgeInsets.only(bottom: 16),
+      elevation: 0,
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: BorderSide(color: Colors.blueGrey.shade100),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(16, 16, 16, 4),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Row(
+              children: [
+                Icon(icon, size: 20, color: brandBlue),
+                const SizedBox(width: 8),
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+              ],
+            ),
+            const SizedBox(height: 14),
+            ...children,
+          ],
+        ),
+      ),
+    );
+  }
+
+  // The single display area: prediction, error, or a hint before the first try
+  Widget resultBox() {
+    if (errorText != null) {
+      return Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.red.shade50,
+          borderRadius: BorderRadius.circular(16),
+          border: Border.all(color: Colors.red.shade200),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Icon(Icons.error_outline, color: Colors.red.shade700),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                errorText!,
+                style: TextStyle(
+                  fontSize: 15,
+                  color: Colors.red.shade900,
+                  height: 1.4,
+                ),
+              ),
+            ),
+          ],
+        ),
+      );
+    }
+    if (score == null) {
+      return Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+          color: Colors.blueGrey.shade50,
+          borderRadius: BorderRadius.circular(16),
+        ),
+        child: const Text(
+          'Your prediction will appear here.',
+          textAlign: TextAlign.center,
+          style: TextStyle(fontSize: 15, color: Colors.black54),
+        ),
+      );
+    }
+    return Container(
+      padding: const EdgeInsets.all(20),
+      decoration: BoxDecoration(
+        color: brandBlue,
+        borderRadius: BorderRadius.circular(16),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Regional Openness Index',
+            style: TextStyle(color: Colors.white70, fontSize: 14),
+          ),
+          const SizedBox(height: 4),
+          Text(
+            score!.toStringAsFixed(3),
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 40,
+              fontWeight: FontWeight.w700,
+            ),
+          ),
+          const SizedBox(height: 10),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(6),
+            child: LinearProgressIndicator(
+              value: score,
+              minHeight: 10,
+              backgroundColor: Colors.white24,
+              valueColor: const AlwaysStoppedAnimation(brandAmber),
+            ),
+          ),
+          const SizedBox(height: 4),
+          const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                '0 closed',
+                style: TextStyle(color: Colors.white70, fontSize: 12),
+              ),
+              Text(
+                '1 open',
+                style: TextStyle(color: Colors.white70, fontSize: 12),
+              ),
+            ],
+          ),
+          const SizedBox(height: 12),
+          Text(
+            interpretation ?? '',
+            style: const TextStyle(
+              color: Colors.white,
+              fontSize: 16,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -312,7 +466,15 @@ class _PredictionPageState extends State<PredictionPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('BaraLens')),
+      backgroundColor: const Color(0xFFF1F5F9),
+      appBar: AppBar(
+        backgroundColor: brandBlue,
+        foregroundColor: Colors.white,
+        title: const Text(
+          'BaraLens',
+          style: TextStyle(fontWeight: FontWeight.w700),
+        ),
+      ),
       body: SafeArea(
         child: Form(
           key: _formKey,
@@ -323,81 +485,87 @@ class _PredictionPageState extends State<PredictionPage> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
-                const Text(
-                  'Predict how open a person is to African regional integration (0 = closed, 1 = open), '
-                  'based on Afrobarometer Round 10 survey answers.',
-                ),
-                const SizedBox(height: 16),
-                inputField(0, 'Whole number, 18 to 100', number: true),
-                inputField(
-                  1,
-                  '0 = no schooling, 3 = primary, 5 = secondary, 8 = university, 9 = post-graduate',
-                  number: true,
-                ),
-                inputField(
-                  2,
-                  '1 = very difficult, 2 = difficult, 3 = easy, 4 = very easy',
-                  number: true,
-                ),
-                inputField(
-                  3,
-                  '1 = strongly disagree ... 3 = neutral ... 5 = strongly agree',
-                  number: true,
-                ),
-                inputField(
-                  4,
-                  '0 = never, 1 = < once a month, 2 = few times a month, 3 = few times a week, 4 = every day',
-                  number: true,
-                ),
-                inputField(5, 'Man or Woman'),
-                inputField(6, 'Urban, Rural or Peri-Urban'),
-                inputField(
-                  7,
-                  'One of the 38 survey countries, e.g. Kenya, Ghana, Nigeria',
-                ),
-                inputField(
-                  8,
-                  'Full time, Part time, Not working looking, or Not working not looking',
-                ),
-                inputField(
-                  9,
-                  'Heard of the African free trade area? Yes or No',
-                ),
-                const SizedBox(height: 8),
-                FilledButton(
-                  onPressed: loading ? null : predict,
-                  child: Padding(
-                    padding: const EdgeInsets.all(12),
-                    child: loading
-                        ? const SizedBox(
-                            height: 20,
-                            width: 20,
-                            child: CircularProgressIndicator(strokeWidth: 2),
-                          )
-                        : const Text('Predict', style: TextStyle(fontSize: 16)),
-                  ),
-                ),
-                const SizedBox(height: 16),
-                Container(
-                  padding: const EdgeInsets.all(16),
-                  decoration: BoxDecoration(
-                    color: errorText != null
-                        ? Colors.red.shade50
-                        : Colors.teal.shade50,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
+                const Padding(
+                  padding: EdgeInsets.fromLTRB(4, 0, 4, 16),
                   child: Text(
-                    errorText ??
-                        resultText ??
-                        'Your prediction will appear here.',
+                    'How open is this person to African regional integration? '
+                    'Fill in their survey answers to predict a score from 0 (closed) to 1 (open).',
                     style: TextStyle(
-                      fontSize: 16,
-                      color: errorText != null
-                          ? Colors.red.shade800
-                          : Colors.black87,
+                      fontSize: 15,
+                      color: Colors.black87,
+                      height: 1.4,
                     ),
                   ),
                 ),
+                section('About the person', Icons.person_outline, [
+                  inputField(0, 'Whole number, 18 to 100', number: true),
+                  inputField(5, 'Man or Woman'),
+                  inputField(
+                    1,
+                    '0 none · 3 primary · 5 secondary · 8 university · 9 post-grad',
+                    number: true,
+                  ),
+                  inputField(
+                    8,
+                    'Full time, Part time, Not working looking, Not working not looking',
+                  ),
+                ]),
+                section('Where they live', Icons.public, [
+                  inputField(7, 'One of the 38 survey countries, e.g. Kenya'),
+                  inputField(6, 'Urban, Rural or Peri-Urban'),
+                ]),
+                section('Views and news', Icons.forum_outlined, [
+                  inputField(
+                    2,
+                    '1 very difficult · 2 difficult · 3 easy · 4 very easy',
+                    number: true,
+                  ),
+                  inputField(
+                    3,
+                    '1 strongly disagree · 3 neutral · 5 strongly agree',
+                    number: true,
+                  ),
+                  inputField(
+                    4,
+                    '0 never · 2 few times a month · 4 every day',
+                    number: true,
+                  ),
+                  inputField(
+                    9,
+                    'Heard of the African free trade area? Yes or No',
+                  ),
+                ]),
+                SizedBox(
+                  height: 54,
+                  child: FilledButton(
+                    style: FilledButton.styleFrom(
+                      backgroundColor: brandBlue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(14),
+                      ),
+                    ),
+                    onPressed: loading ? null : predict,
+                    child: loading
+                        ? const SizedBox(
+                            height: 22,
+                            width: 22,
+                            child: CircularProgressIndicator(
+                              strokeWidth: 2.5,
+                              color: Colors.white,
+                            ),
+                          )
+                        : const Text(
+                            'Predict',
+                            style: TextStyle(
+                              fontSize: 17,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                  ),
+                ),
+                const SizedBox(height: 16),
+                resultBox(),
+                const SizedBox(height: 24),
               ],
             ),
           ),
